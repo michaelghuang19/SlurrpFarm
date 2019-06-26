@@ -83,8 +83,7 @@ public class DragAndDrop : MonoBehaviour
         draggingItem = false;
         draggedObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
-        // draggedObject name displayed to console, along with log source
-        Debug.Log("DropItem " + draggedObject.name);
+        // Debug.Log("DropItem " + draggedObject.name);
         // Debug.Log("Debug on " + gameObject.name, gameObject);
 
         // check if this is the matching game

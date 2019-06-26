@@ -14,8 +14,6 @@ public class DropZone : DragAndDrop
     void Start()
     {
         shapes = Resources.LoadAll<GameObject>("Shapes");
-
-        // GameObject randomShape = Instantiate(shapes[0]) as GameObject;
     }
 
     public void CheckDrop(GameObject draggedObject)
@@ -23,6 +21,7 @@ public class DropZone : DragAndDrop
         shape = draggedObject;
         x = shape.transform.position.x;
         y = shape.transform.position.y;
+        //TODO: fix this to something meaningful
         spawn = shape.transform.position;
 
         DiamondCheck();
@@ -41,6 +40,7 @@ public class DropZone : DragAndDrop
                     GameObject.Find("DragAndDrop").GetComponent<SystemProps>().AddScore(shape);
                 } else
                 {
+                    // TODO: Modify this 
                     shape.transform.position = spawn;
                 }
 
@@ -60,6 +60,7 @@ public class DropZone : DragAndDrop
                     GameObject.Find("DragAndDrop").GetComponent<SystemProps>().AddScore(shape);
                 } else
                 {
+                    // TODO: Modify this 
                     shape.transform.position = spawn;
                 }
             }

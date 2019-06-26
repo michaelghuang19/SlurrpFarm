@@ -8,15 +8,11 @@ public class SystemProps : MonoBehaviour
     public int shapesLeft = 10;
     private GameObject correctShape;
     private GameObject[] shapes;
-    // timer, eventually
+    // TODO: Maybe a timer?
 
-    // Start is called before the first frame update
     void Start()
     {
         shapes = Resources.LoadAll<GameObject>("Shapes");
-
-        // random test
-        // GameObject randomShape = Instantiate(shapes[0]) as GameObject;
     }
 
     void AddScoreHelper()
@@ -31,10 +27,12 @@ public class SystemProps : MonoBehaviour
     {
         if (shapesLeft != 0)
         {
-            GameObject randomShape1 = Instantiate(shapes[0]) as GameObject;
-            GameObject randomShape2 = Instantiate(shapes[1]) as GameObject;
+            // TODO: use Physics.OverlapSphere eventually
+            int index = Random.Range(0, shapes.Length);
+            GameObject randomShape = Instantiate(shapes[index]) as GameObject;
         }
-        // somehow quit when necessary
+        return;
+        // TODO: quit when necessary
     }
 
     public void AddScore(GameObject shape)
@@ -43,16 +41,10 @@ public class SystemProps : MonoBehaviour
         Invoke("AddScoreHelper", 2);
     }
 
-    // think about some options
     void OnGUI()
     {
         GUI.Box(new Rect(10, 10, 150, 20), "Score: " + score.ToString());
         GUI.Box(new Rect(160, 10, 200, 20), "Shapes Left: " + shapesLeft.ToString());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
