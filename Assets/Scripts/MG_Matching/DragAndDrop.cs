@@ -46,6 +46,7 @@ public class DragAndDrop : MonoBehaviour
     private void DragOrPickUp()
     {
         var inputPosition = CurrentTouchPosition;
+        
 
         if (draggingItem)
         {
@@ -82,16 +83,15 @@ public class DragAndDrop : MonoBehaviour
         draggingItem = false;
         draggedObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
-        // draggedObject name displayed to console
+        // draggedObject name displayed to console, along with log source
         Debug.Log("DropItem " + draggedObject.name);
+        // Debug.Log("Debug on " + gameObject.name, gameObject);
 
         // check if this is the matching game
         if (matching)
         {
-            GameObject.Find("DragAndDrop").GetComponent<DropZone>();
-            // GameObject.Find("DropZone").GetComponent<DropZone>().CheckDrop();
+            GameObject.Find("DragAndDrop").GetComponent<DropZone>().CheckDrop(draggedObject);
         }
-
 
         // no tag atm, could eventually be useful
         // Debug.Log("DropItem " + draggedObject.tag);

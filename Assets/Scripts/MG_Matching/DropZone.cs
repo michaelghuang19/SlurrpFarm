@@ -5,30 +5,65 @@ using UnityEngine.EventSystems;
 
 public class DropZone : DragAndDrop
 {
-    public void OnDrop(PointerEventData eventData)
-    {
-        Debug.Log("OnDrop to " + gameObject.name);
+    private GameObject shape;
+    private float x;
+    private float y;
+    private Vector2 spawn;
+    private GameObject[] shapes;
 
+    void Start()
+    {
+        shapes = Resources.LoadAll<GameObject>("Shapes");
+
+        // GameObject randomShape = Instantiate(shapes[0]) as GameObject;
     }
 
-    void Update()
+    public void CheckDrop(GameObject draggedObject)
     {
-        CheckDrop();
-    }
+        shape = draggedObject;
+        x = shape.transform.position.x;
+        y = shape.transform.position.y;
+        spawn = shape.transform.position;
 
-    public void CheckDrop()
-    {
         DiamondCheck();
         SquareCheck();
     }
-
+    
     void DiamondCheck()
     {
-        Debug.Log("Checking if Diamond!");
+        if (x >= 10 && x <= 14)
+        {
+            if (y >= -5 && y <= -1)
+            {
+                if (shape.name == "Diamond" || shape.name == "Diamond(Clone)")
+                {
+                    shape.transform.position = new Vector2(12, -3);
+                    GameObject.Find("DragAndDrop").GetComponent<SystemProps>().AddScore(shape);
+                } else
+                {
+                    shape.transform.position = spawn;
+                }
+
+            }
+        }
     }
 
     void SquareCheck()
     {
-        Debug.Log("Checking if Square!");
+        if (x >= 10 && x <= 14)
+        {
+            if (y >= 1 && y <= 5)
+            {
+                if (shape.name == "Square" || shape.name == "Square(Clone)")
+                {
+                    shape.transform.position = new Vector2(12, 3);
+                    GameObject.Find("DragAndDrop").GetComponent<SystemProps>().AddScore(shape);
+                } else
+                {
+                    shape.transform.position = spawn;
+                }
+            }
+        }
+        
     }
 }
