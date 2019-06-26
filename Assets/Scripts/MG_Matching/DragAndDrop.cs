@@ -1,11 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using UnityEngine.SceneManagement;
+
 public class DragAndDrop : MonoBehaviour
 {
     private bool draggingItem = false;
+    private bool matching = false;
     private GameObject draggedObject;
     private Vector2 touchOffset;
+
+    void Start()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (scene.name == "Minigame_Matching")
+        {
+            matching = true;
+        }
+    }
 
     void Update()
     {
@@ -49,7 +62,7 @@ public class DragAndDrop : MonoBehaviour
                     draggingItem = true;
                     draggedObject = hit.transform.gameObject;
                     touchOffset = (Vector2)hit.transform.position - inputPosition;
-                    draggedObject.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                    draggedObject.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
                 }
             }
         }
@@ -67,6 +80,21 @@ public class DragAndDrop : MonoBehaviour
     void DropItem()
     {
         draggingItem = false;
-        draggedObject.transform.localScale = new Vector3(1f, 1f, 1f);
+        draggedObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
+        // draggedObject name displayed to console
+        Debug.Log("DropItem " + draggedObject.name);
+
+        // check if this is the matching game
+        if (matching)
+        {
+            GameObject.Find("DragAndDrop").GetComponent<DropZone>();
+            // GameObject.Find("DropZone").GetComponent<DropZone>().CheckDrop();
+        }
+
+
+        // no tag atm, could eventually be useful
+        // Debug.Log("DropItem " + draggedObject.tag);
     }
+
 }
