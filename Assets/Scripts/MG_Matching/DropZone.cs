@@ -14,6 +14,10 @@ public class DropZone : DragAndDrop
     void Start()
     {
         shapes = Resources.LoadAll<GameObject>("Shapes");
+
+        int index = Random.Range(0, shapes.Length);
+        GameObject randomShape = Instantiate(shapes[index]) as GameObject;
+        randomShape.transform.position = new Vector2(-12, 0);
     }
 
     public void CheckDrop(GameObject draggedObject)
@@ -21,50 +25,68 @@ public class DropZone : DragAndDrop
         shape = draggedObject;
         x = shape.transform.position.x;
         y = shape.transform.position.y;
-        //TODO: fix this to something meaningful
-        spawn = shape.transform.position;
 
-        DiamondCheck();
         SquareCheck();
-    }
-    
-    void DiamondCheck()
-    {
-        if (x >= 10 && x <= 14)
-        {
-            if (y >= -5 && y <= -1)
-            {
-                if (shape.name == "Diamond" || shape.name == "Diamond(Clone)")
-                {
-                    shape.transform.position = new Vector2(12, -3);
-                    GameObject.Find("DragAndDrop").GetComponent<SystemProps>().AddScore(shape);
-                } else
-                {
-                    // TODO: Modify this 
-                    shape.transform.position = spawn;
-                }
-
-            }
-        }
+        CircleCheck();
+        TriangleCheck();
     }
 
     void SquareCheck()
     {
         if (x >= 10 && x <= 14)
         {
-            if (y >= 1 && y <= 5)
+            if (y >= 3 && y <= 4.5)
             {
                 if (shape.name == "Square" || shape.name == "Square(Clone)")
                 {
-                    shape.transform.position = new Vector2(12, 3);
+                    shape.transform.position = new Vector2(12, 3.5F);
                     GameObject.Find("DragAndDrop").GetComponent<SystemProps>().AddScore(shape);
                 } else
                 {
-                    // TODO: Modify this 
-                    shape.transform.position = spawn;
+                    shape.transform.position = new Vector2(-12, 0);
                 }
             }
         }
         
+    }
+
+    void CircleCheck()
+    {
+        if (x >= 10 && x <= 14)
+        {
+            if (y >= -1 && y <= 1)
+            {
+                if (shape.name == "Circle" || shape.name == "Circle(Clone)")
+                {
+                    shape.transform.position = new Vector2(12, 0);
+                    GameObject.Find("DragAndDrop").GetComponent<SystemProps>().AddScore(shape);
+                }
+                else
+                {
+                    shape.transform.position = new Vector2(-12, 0);
+                }
+            }
+        }
+
+    }
+
+    void TriangleCheck()
+    {
+        if (x >= 10 && x <= 14)
+        {
+            if (y >= -4.5 && y <= -2.5)
+            {
+                if (shape.name == "Triangle" || shape.name == "Triangle(Clone)")
+                {
+                    shape.transform.position = new Vector2(12, -4);
+                    GameObject.Find("DragAndDrop").GetComponent<SystemProps>().AddScore(shape);
+                }
+                else
+                {
+                    shape.transform.position = new Vector2(-12,0);
+                }
+
+            }
+        }
     }
 }

@@ -17,6 +17,7 @@ public class DragAndDrop : MonoBehaviour
         if (scene.name == "Minigame_Matching")
         {
             matching = true;
+            GameObject.Find("DragAndDrop").GetComponent<DropZone>();
         }
     }
 

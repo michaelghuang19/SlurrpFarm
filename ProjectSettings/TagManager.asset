@@ -42,6 +42,9 @@ TagManager:
   - name: Background
     uniqueID: 647122747
     locked: 0
+  - name: Overlay
+    uniqueID: 2809601771
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
