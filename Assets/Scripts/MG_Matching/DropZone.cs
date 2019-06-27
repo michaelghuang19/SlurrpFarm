@@ -17,7 +17,7 @@ public class DropZone : DragAndDrop
 
         int index = Random.Range(0, shapes.Length);
         GameObject randomShape = Instantiate(shapes[index]) as GameObject;
-        randomShape.transform.position = new Vector2(-12, 0);
+        randomShape.transform.position = new Vector2(-7, 0);
     }
 
     public void CheckDrop(GameObject draggedObject)
@@ -33,13 +33,13 @@ public class DropZone : DragAndDrop
 
     void SquareCheck()
     {
-        if (x >= 10 && x <= 14)
+        if (x >= 6 && x <= 8)
         {
             if (y >= 2.5 && y <= 4.5)
             {
                 if (shape.name == "Square" || shape.name == "Square(Clone)")
                 {
-                    shape.transform.position = new Vector2(12, 3.5F);
+                    shape.transform.position = new Vector2(7, 3.5F);
                     GameObject.Find("DragAndDrop").GetComponent<SystemProps>().AddScore(shape);
                 } else
                 {
@@ -52,13 +52,13 @@ public class DropZone : DragAndDrop
 
     void CircleCheck()
     {
-        if (x >= 10 && x <= 14)
+        if (x >= 6 && x <= 8)
         {
             if (y >= -1.5 && y <= 1.5)
             {
                 if (shape.name == "Circle" || shape.name == "Circle(Clone)")
                 {
-                    shape.transform.position = new Vector2(12, 0);
+                    shape.transform.position = new Vector2(7, 0);
                     GameObject.Find("DragAndDrop").GetComponent<SystemProps>().AddScore(shape);
                 }
                 else
@@ -72,13 +72,13 @@ public class DropZone : DragAndDrop
 
     void TriangleCheck()
     {
-        if (x >= 10 && x <= 14)
+        if (x >= 6 && x <= 8)
         {
             if (y >= -4.5 && y <= -2)
             {
                 if (shape.name == "Triangle" || shape.name == "Triangle(Clone)")
                 {
-                    shape.transform.position = new Vector2(12, -4);
+                    shape.transform.position = new Vector2(7, -3.5F);
                     GameObject.Find("DragAndDrop").GetComponent<SystemProps>().AddScore(shape);
                 }
                 else
