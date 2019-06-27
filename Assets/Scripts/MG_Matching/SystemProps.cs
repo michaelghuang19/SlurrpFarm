@@ -41,7 +41,7 @@ public class SystemProps : MonoBehaviour
             // TODO: use Physics.OverlapSphere eventually
             int index = Random.Range(0, shapes.Length);
             GameObject randomShape = Instantiate(shapes[index]) as GameObject;
-            randomShape.transform.position = new Vector2(-12, 0);
+            randomShape.transform.position = new Vector2(-7, 0);
         }
         else
         {
@@ -59,10 +59,10 @@ public class SystemProps : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Box(new Rect(0, 10, 100, 20), "Score: " + score.ToString());
+        GUI.Box(new Rect(0, 10, 200, 50), "Score: " + score.ToString());
         int timeinseconds = (int) time;
-        GUI.Box(new Rect(110, 10, 100, 20), "Time: " + timeinseconds.ToString());
-        GUI.Box(new Rect(220, 10, 150, 20), "Shapes Left: " + shapesLeft.ToString());
+        GUI.Box(new Rect(210, 10, 200, 50), "Time: " + timeinseconds.ToString());
+        GUI.Box(new Rect(420, 10, 250, 50), "Shapes Left: " + shapesLeft.ToString());
         if (gameover)
         {
             // fix this, return to screen
