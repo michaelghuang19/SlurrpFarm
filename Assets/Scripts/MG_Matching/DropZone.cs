@@ -35,7 +35,7 @@ public class DropZone : DragAndDrop
     {
         if (x >= 10 && x <= 14)
         {
-            if (y >= 3 && y <= 4.5)
+            if (y >= 2.5 && y <= 4.5)
             {
                 if (shape.name == "Square" || shape.name == "Square(Clone)")
                 {
@@ -54,7 +54,7 @@ public class DropZone : DragAndDrop
     {
         if (x >= 10 && x <= 14)
         {
-            if (y >= -1 && y <= 1)
+            if (y >= -1.5 && y <= 1.5)
             {
                 if (shape.name == "Circle" || shape.name == "Circle(Clone)")
                 {
@@ -74,7 +74,7 @@ public class DropZone : DragAndDrop
     {
         if (x >= 10 && x <= 14)
         {
-            if (y >= -4.5 && y <= -2.5)
+            if (y >= -4.5 && y <= -2)
             {
                 if (shape.name == "Triangle" || shape.name == "Triangle(Clone)")
                 {
