@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "603696295774",
+    "firebase_url": "https://slurrpfarm-2612a.firebaseio.com",
+    "project_id": "slurrpfarm-2612a",
+    "storage_bucket": "slurrpfarm-2612a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:603696295774:android:7b59d3cae4599b59",
+        "android_client_info": {
+          "package_name": "com.slurrpfarm.slurrpfarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "603696295774-aqhe8p4uiqi4k1bn29tino5llrue366j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx4yY5dcL-oMEXQKdflOzN9B7QE1y4KUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "603696295774-aqhe8p4uiqi4k1bn29tino5llrue366j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
