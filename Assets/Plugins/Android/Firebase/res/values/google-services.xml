@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id" xmlns:tools="http://schemas.android.com/tools">
+  <string name="firebase_database_url" translatable="false">https://slurrpfarm-2612a.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">603696295774</string>
+  <string name="google_storage_bucket" translatable="false">slurrpfarm-2612a.appspot.com</string>
+  <string name="project_id" translatable="false">slurrpfarm-2612a</string>
+  <string name="google_api_key" translatable="false">AIzaSyBx4yY5dcL-oMEXQKdflOzN9B7QE1y4KUE</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBx4yY5dcL-oMEXQKdflOzN9B7QE1y4KUE</string>
+  <string name="google_app_id" translatable="false">1:603696295774:android:7b59d3cae4599b59</string>
+  <string name="default_web_client_id" translatable="false">603696295774-aqhe8p4uiqi4k1bn29tino5llrue366j.apps.googleusercontent.com</string>
+</resources>
