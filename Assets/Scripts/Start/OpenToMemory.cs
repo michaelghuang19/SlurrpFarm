@@ -13,6 +13,13 @@ public class OpenToMemory : MonoBehaviour
     
     public void OpenMemory()
     {
+        Firebase.Analytics.FirebaseAnalytics
+            .LogEvent(
+                Firebase.Analytics.FirebaseAnalytics.EventLevelStart,
+                Firebase.Analytics.FirebaseAnalytics.ParameterLevelName,
+                "memory_mg"
+            );
+        Debug.Log("Firebase eventLevelStart called");
         SceneManager.LoadScene(2);
     }
 
