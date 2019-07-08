@@ -8,16 +8,15 @@ public class DropZone : DragAndDrop
     private GameObject shape;
     private float x;
     private float y;
-    private Vector2 spawn;
     private GameObject[] shapes;
 
     void Start()
     {
-        shapes = Resources.LoadAll<GameObject>("Shapes");
+        shapes = Resources.LoadAll<GameObject>("Sprites/MinigameElements/Shapes");
 
         int index = Random.Range(0, shapes.Length);
         GameObject randomShape = Instantiate(shapes[index]) as GameObject;
-        randomShape.transform.position = new Vector2(-7, 0);
+        randomShape.transform.position = new Vector2(-5, 0);
     }
 
     public void CheckDrop(GameObject draggedObject)
@@ -26,64 +25,64 @@ public class DropZone : DragAndDrop
         x = shape.transform.position.x;
         y = shape.transform.position.y;
 
-        SquareCheck();
-        CircleCheck();
-        TriangleCheck();
+        CheeseCheck();
+        TomatoCheck();
+        BananaCheck();
     }
 
-    void SquareCheck()
+    void CheeseCheck()
     {
         if (x >= 6 && x <= 8)
         {
-            if (y >= 2.5 && y <= 4.5)
+            if (y >= 3 && y <= 4)
             {
-                if (shape.name == "Square" || shape.name == "Square(Clone)")
+                if (shape.name == "Cheese" || shape.name == "Cheese(Clone)")
                 {
-                    shape.transform.position = new Vector2(7, 3.5F);
+                    shape.transform.position = new Vector2(6.5F, 3.5F);
                     GameObject.Find("DragAndDrop").GetComponent<SystemProps>().AddScore(shape);
                 } else
                 {
-                    shape.transform.position = new Vector2(-12, 0);
+                    shape.transform.position = new Vector2(-5, 0);
                 }
             }
         }
         
     }
 
-    void CircleCheck()
+    void TomatoCheck()
     {
-        if (x >= 6 && x <= 8)
+        if (x >= 5 && x <= 7)
         {
             if (y >= -1.5 && y <= 1.5)
             {
-                if (shape.name == "Circle" || shape.name == "Circle(Clone)")
+                if (shape.name == "Tomato" || shape.name == "Tomato(Clone)")
                 {
                     shape.transform.position = new Vector2(7, 0);
                     GameObject.Find("DragAndDrop").GetComponent<SystemProps>().AddScore(shape);
                 }
                 else
                 {
-                    shape.transform.position = new Vector2(-12, 0);
+                    shape.transform.position = new Vector2(-5, 0);
                 }
             }
         }
 
     }
 
-    void TriangleCheck()
+    void BananaCheck()
     {
-        if (x >= 6 && x <= 8)
+        if (x >= 4 && x <= 6)
         {
-            if (y >= -4.5 && y <= -2)
+            if (y >= -4 && y <= -2)
             {
-                if (shape.name == "Triangle" || shape.name == "Triangle(Clone)")
+                if (shape.name == "Banana" || shape.name == "Banana(Clone)")
                 {
                     shape.transform.position = new Vector2(7, -3.5F);
                     GameObject.Find("DragAndDrop").GetComponent<SystemProps>().AddScore(shape);
                 }
                 else
                 {
-                    shape.transform.position = new Vector2(-12,0);
+                    shape.transform.position = new Vector2(-5,0);
                 }
 
             }

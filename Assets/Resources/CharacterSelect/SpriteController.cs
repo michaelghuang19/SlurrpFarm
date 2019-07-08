@@ -20,7 +20,7 @@ public class SpriteController : MonoBehaviour
     {
         // TODO: Check this out
         current = Instantiate(sprites[index]) as GameObject;
-        current.transform.position = new Vector2(250, 0);
+        current.transform.position = new Vector2(5, 0);
     }
 
     public void MoveLeft()

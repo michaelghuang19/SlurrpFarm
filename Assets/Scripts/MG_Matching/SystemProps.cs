@@ -18,7 +18,7 @@ public class SystemProps : MonoBehaviour
 
     void Start()
     {
-        shapes = Resources.LoadAll<GameObject>("Shapes");
+        shapes = Resources.LoadAll<GameObject>("Sprites/MinigameElements/Shapes");
     }
 
     void Update()
