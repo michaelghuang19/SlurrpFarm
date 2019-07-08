@@ -134,6 +134,7 @@ public class GameController : MonoBehaviour
         countCorrectGuesses++;
 
         if (countCorrectGuesses == gameGuesses) {
+            gameWon = true;
             SetExp();
             SceneManager.LoadScene(1);
             Debug.Log("You have finished the game!");
