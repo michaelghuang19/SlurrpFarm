@@ -80,16 +80,16 @@ public class GameController : MonoBehaviour
     }
 
     void PickACard() {
-        Debug.Log ("You are clicking a button");
+        //Debug.Log ("You are clicking a button");
         //Finding the button that is currently being clicked. 
         
-        Debug.Log("First Guess: " + firstGuess + ", Second Guess: " + secondGuess);
+        //Debug.Log("First Guess: " + firstGuess + ", Second Guess: " + secondGuess);
 
         string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
 
         if (!firstGuess) {
             firstGuess = true;
-            Debug.Log("First Guess, Name: " + name);
+            //Debug.Log("First Guess, Name: " + name);
             firstGuessIndex = int.Parse(name);
             firstGuessCard = gameCards[firstGuessIndex].name;
             btns[firstGuessIndex].image.sprite = gameCards[firstGuessIndex];
@@ -98,7 +98,7 @@ public class GameController : MonoBehaviour
             
         } else if (!secondGuess) {
             secondGuess = true;
-            Debug.Log("Second Guess, Name: " + name);
+            //Debug.Log("Second Guess, Name: " + name);
             secondGuessIndex = int.Parse(name);
             btns[secondGuessIndex].image.sprite = gameCards[secondGuessIndex];
             secondGuessCard = gameCards[secondGuessIndex].name;
@@ -145,9 +145,13 @@ public class GameController : MonoBehaviour
         CheckDefaultPrefs();
         
         int PlayerLevel = PlayerPrefs.GetInt("PlayerLevel");
-        int CurEXP = PlayerPrefs.GetInt("CurExp");
+        int CurExp = PlayerPrefs.GetInt("CurEXP");
         int PrevGameCount = PlayerPrefs.GetInt("PrevGameCount");
         int PrevGame = PlayerPrefs.GetInt("PrevGame");
+        Debug.Log("Level: " + PlayerLevel);
+        Debug.Log("CurExp: " + CurExp);
+
+
 
         bool levelChanged = false;
         bool gameChanged = false;
@@ -167,28 +171,30 @@ public class GameController : MonoBehaviour
             PrevGameCount +=1;
         }
         exp = (int) (exp * (Math.Pow(0.8, PrevGameCount - 1)));
-        CurEXP += exp;
+        Debug.Log("Exp: " + exp);
+        CurExp += exp;
         if (PlayerLevel == 1) {
-            if (CurEXP >= 100) {
+            if (CurExp >= 100) {
                 PlayerLevel += 1;
-                CurEXP -= 100;
+                CurExp -= 100;
                 levelChanged = true;
             }
         } else if (PlayerLevel == 2) {
-            if (CurEXP >= 200) {
+            if (CurExp >= 200) {
                 PlayerLevel += 1;
-                CurEXP -= 200;
+                CurExp -= 200;
                 levelChanged = true;
             }
         } else {
-            if (CurEXP >= 300) {
+            if (CurExp >= 300) {
                 PlayerLevel += 1;
-                CurEXP -= 300;
+                CurExp -= 300;
                 levelChanged = true;
             }
         }
 
-        PlayerPrefs.SetInt("CurEXP", CurEXP);
+        Debug.Log("CurExp: " + CurExp);
+        PlayerPrefs.SetInt("CurEXP", CurExp);
         PlayerPrefs.SetInt("PrevGameCount", PrevGameCount);
         if (levelChanged) {
             PlayerPrefs.SetInt("PlayerLevel", PlayerLevel);
@@ -202,8 +208,8 @@ public class GameController : MonoBehaviour
         if (!PlayerPrefs.HasKey("PlayerLevel")) {
             PlayerPrefs.SetInt("PlayerLevel", 1);
         }
-        if (!PlayerPrefs.HasKey("CurEXP")) {
-            PlayerPrefs.SetInt("CurEXP", 0);
+        if (!PlayerPrefs.HasKey("CurExp")) {
+            PlayerPrefs.SetInt("CurExp", 0);
         }
         if (!PlayerPrefs.HasKey("PrevGame")) {
             PlayerPrefs.SetInt("PrevGame", 0);
