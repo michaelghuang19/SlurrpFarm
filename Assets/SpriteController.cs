@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class SpriteController : MonoBehaviour
 {
-    private Sprite[] sprites;
-    private Sprite current;
+    private GameObject[] sprites;
+    private GameObject current;
     private int index = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        sprites = Resources.LoadAll<Sprite>("CharacterSelect/Characters");
+        sprites = Resources.LoadAll<GameObject>("CharacterSelect/Characters/GameObjects");
 
         CreateSprite();
     }
 
     void CreateSprite()
     {
-        current = Sprite.Create(sprites[index]);
+        // TODO: Check this out
+        current = Instantiate(sprites[index]) as GameObject;
         current.transform.position = new Vector2(250, 0);
     }
 
