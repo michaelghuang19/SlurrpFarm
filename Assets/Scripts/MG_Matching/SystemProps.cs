@@ -14,7 +14,7 @@ public class SystemProps : MonoBehaviour
     private bool gameWon = false;
     private bool timeOn = true;
     // adjustable time
-    private float time = 10;
+    private float time = 30;
     private int GameID = 1;
 
     private float virtualWidth = 1920.0f;
@@ -77,24 +77,29 @@ public class SystemProps : MonoBehaviour
 
     void OnGUI()
     {
+        int width = Screen.width;
+        int height = Screen.height;
 
-        GUI.Box(new Rect(0, 10, 200, 100), "Score: " + score.ToString());
+        GUIStyle style = new GUIStyle();
+        style.normal.textColor = Color.blue;
+        style.fontSize = 50;
+
+        GUI.Box(new Rect(0, 10, width / 3, 100), "Score: " + score.ToString(), style);
         int timeinseconds = (int) time;
-        GUI.Box(new Rect(210, 10, 200, 100), "Time: " + timeinseconds.ToString());
-        GUI.Box(new Rect(420, 10, 250, 100), "Shapes Left: " + shapesLeft.ToString());
+        GUI.Box(new Rect(210, 10, width / 3, 100), "Time: " + timeinseconds.ToString(), style);
+        GUI.Box(new Rect(420, 10, width / 3, 100), "Shapes Left: " + shapesLeft.ToString(), style);
         if (gameover)
         {
 
             GetComponent<DragAndDrop>().matching = false;
 
-
             // fix this, return to screen
             if (gameWon)
             {
-                GUI.Label(new Rect(300, 200, 100, 50), "All Shapes Complete in " + (30 - timeinseconds) + " seconds");
+                GUI.Label(new Rect(300, 200, 100, 50), "All Shapes Complete in " + (30 - timeinseconds) + " seconds", style);
             } else
             {
-                GUI.Label(new Rect(300, 200, 100, 50), "You had " + shapesLeft + " shapes left! Better luck next time");
+                GUI.Label(new Rect(300, 200, 100, 50), "You had " + shapesLeft + " shapes left! Better luck next time", style);
             }
 
             ExitGame();
