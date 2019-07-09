@@ -13,19 +13,34 @@ public class SystemProps : MonoBehaviour
     private bool gameover = false;
     private bool gameWon = false;
     private bool timeOn = true;
-    private float time = 0;
+    // adjustable time
+    private float time = 10;
     private int GameID = 1;
+
+    private float virtualWidth = 1920.0f;
+    private float virtualHeight = 1080.0f;
 
     void Start()
     {
         shapes = Resources.LoadAll<GameObject>("Sprites/MinigameElements/Shapes");
+
+        //matrix = Matrix4x4.TRS(Vector2.zero, Quaternion.identity, Vector2(Screen.width / virtualWidth, Screen.height / virtualHeight));
     }
 
     void Update()
     {
+        if (time <= 0)
+        {
+            timeOn = false;
+        }
+
         if (timeOn)
         {
-            time += Time.deltaTime;
+            time -= Time.deltaTime;
+        }
+        else
+        {
+            gameover = true;
         }
     }
 
@@ -44,14 +59,14 @@ public class SystemProps : MonoBehaviour
             // TODO: use Physics.OverlapSphere eventually
             int index = UnityEngine.Random.Range(0, shapes.Length);
             GameObject randomShape = Instantiate(shapes[index]) as GameObject;
-            randomShape.transform.position = new Vector2(-7, 0);
+            randomShape.transform.position = new Vector2(-6, 0);
         }
         else
         {
+            gameWon = true;
             timeOn = false;
             gameover = true;
         }
-        // TODO: quit when necessary
     }
 
     public void AddScore(GameObject shape)
@@ -62,17 +77,34 @@ public class SystemProps : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Box(new Rect(0, 10, 200, 50), "Score: " + score.ToString());
+
+        GUI.Box(new Rect(0, 10, 200, 100), "Score: " + score.ToString());
         int timeinseconds = (int) time;
-        GUI.Box(new Rect(210, 10, 200, 50), "Time: " + timeinseconds.ToString());
-        GUI.Box(new Rect(420, 10, 250, 50), "Shapes Left: " + shapesLeft.ToString());
+        GUI.Box(new Rect(210, 10, 200, 100), "Time: " + timeinseconds.ToString());
+        GUI.Box(new Rect(420, 10, 250, 100), "Shapes Left: " + shapesLeft.ToString());
         if (gameover)
         {
+
+            GetComponent<DragAndDrop>().matching = false;
+
+
             // fix this, return to screen
-            GUI.Label(new Rect(500, 200, 100, 50), "All Shapes Complete in " + timeinseconds + " seconds" );
-            SetExp();
-            Invoke("LoadMenu", 5);
+            if (gameWon)
+            {
+                GUI.Label(new Rect(300, 200, 100, 50), "All Shapes Complete in " + (30 - timeinseconds) + " seconds");
+            } else
+            {
+                GUI.Label(new Rect(300, 200, 100, 50), "You had " + shapesLeft + " shapes left! Better luck next time");
+            }
+
+            ExitGame();
         }
+    }
+
+    void ExitGame()
+    {
+        SetExp();
+        Invoke("LoadMenu", 5);
     }
 
     void SetExp() {

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class DragAndDrop : MonoBehaviour
 {
     private bool draggingItem = false;
-    private bool matching = false;
+    public bool matching = false;
     private GameObject draggedObject;
     private Vector2 touchOffset;
 
@@ -17,20 +17,22 @@ public class DragAndDrop : MonoBehaviour
         if (scene.name == "Minigame_Matching")
         {
             matching = true;
-            GameObject.Find("DragAndDrop").GetComponent<DropZone>();
+            GetComponent<DropZone>();
         }
     }
 
     void Update()
     {
-        if (HasInput)
-        {
-            DragOrPickUp();
-        }
-        else
-        {
-            if (draggingItem)
-                DropItem();
+        if (matching) {
+            if (HasInput)
+            {
+                DragOrPickUp();
+            }
+            else
+            {
+                if (draggingItem)
+                    DropItem();
+            }
         }
     }
 
@@ -46,25 +48,27 @@ public class DragAndDrop : MonoBehaviour
 
     private void DragOrPickUp()
     {
-        var inputPosition = CurrentTouchPosition;
-        
+        if (matching)
+        {
+            var inputPosition = CurrentTouchPosition;
 
-        if (draggingItem)
-        {
-            draggedObject.transform.position = inputPosition + touchOffset;
-        }
-        else
-        {
-            RaycastHit2D[] touches = Physics2D.RaycastAll(inputPosition, inputPosition, 0.5f);
-            if (touches.Length > 0)
+            if (draggingItem)
             {
-                var hit = touches[0];
-                if (hit.transform != null)
+                draggedObject.transform.position = inputPosition + touchOffset;
+            }
+            else
+            {
+                RaycastHit2D[] touches = Physics2D.RaycastAll(inputPosition, inputPosition, 0.5f);
+                if (touches.Length > 0)
                 {
-                    draggingItem = true;
-                    draggedObject = hit.transform.gameObject;
-                    touchOffset = (Vector2)hit.transform.position - inputPosition;
-                    draggedObject.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+                    var hit = touches[0];
+                    if (hit.transform != null)
+                    {
+                        draggingItem = true;
+                        draggedObject = hit.transform.gameObject;
+                        touchOffset = (Vector2)hit.transform.position - inputPosition;
+                        draggedObject.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+                    }
                 }
             }
         }
@@ -75,26 +79,33 @@ public class DragAndDrop : MonoBehaviour
         get
         {
             // returns true if either the mouse button is down or at least one touch is felt on the screen
-            return Input.GetMouseButton(0);
+            if (matching)
+            {
+                return Input.GetMouseButton(0);
+            }
+            return false;
         }
     }
 
     void DropItem()
     {
-        draggingItem = false;
-        draggedObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-
-        // Debug.Log("DropItem " + draggedObject.name);
-        // Debug.Log("Debug on " + gameObject.name, gameObject);
-
-        // check if this is the matching game
         if (matching)
         {
-            GameObject.Find("DragAndDrop").GetComponent<DropZone>().CheckDrop(draggedObject);
-        }
+            draggingItem = false;
+            draggedObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
-        // no tag atm, could eventually be useful
-        // Debug.Log("DropItem " + draggedObject.tag);
+            // Debug.Log("DropItem " + draggedObject.name);
+            // Debug.Log("Debug on " + gameObject.name, gameObject);
+
+            // check if this is the matching game
+            if (matching)
+            {
+                GetComponent<DropZone>().CheckDrop(draggedObject);
+            }
+
+            // no tag atm, could eventually be useful
+            // Debug.Log("DropItem " + draggedObject.tag);
+        }
     }
 
 }
