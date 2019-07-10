@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class BackToOpen : MonoBehaviour
 {
+    private ParticleSystem levelParticles;
+
     [SerializeField]
     Canvas UICanvas;
     [SerializeField]
     Canvas DiscountCanvas;
-    // Start is called before the first frame update
+
+    void Start()
+    {
+
+    }
 
     public void GoBack() 
     {
         UICanvas.gameObject.SetActive(true);
         DiscountCanvas.gameObject.SetActive(false);
+    }
+
+    public void levelParticles()
+    {
+
     }
 }
