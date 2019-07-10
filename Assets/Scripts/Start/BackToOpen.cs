@@ -22,7 +22,7 @@ public class BackToOpen : MonoBehaviour
         DiscountCanvas.gameObject.SetActive(false);
     }
 
-    public void levelParticles()
+    public void releaseLevelParticles()
     {
 
     }
