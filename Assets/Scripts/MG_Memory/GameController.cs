@@ -5,8 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
-
 public class GameController : MonoBehaviour
 {
     [SerializeField]
@@ -29,7 +27,9 @@ public class GameController : MonoBehaviour
     private bool gameWon = false;
     private int GameID = 2;
 
-
+    private GameObject winMessage;
+    private GameObject lossMessage;
+    private ParticleSystem winParticles;
     
     //Awake() gets called before Start()
     void Awake() {
@@ -41,6 +41,13 @@ public class GameController : MonoBehaviour
         AddListeners();
         AddGameCards();
         gameGuesses = gameCards.Count / 2;
+
+        winMessage = GameObject.Find("Win");
+        lossMessage = GameObject.Find("Loss");
+        winParticles = GameObject.Find("WinParticles").GetComponent<ParticleSystem>();
+
+        winMessage.SetActive(false);
+        lossMessage.SetActive(false);
     }
 
     void GetButtons() {
@@ -139,9 +146,32 @@ public class GameController : MonoBehaviour
 
         if (countCorrectGuesses == gameGuesses) {
             gameWon = true;
+            gameOverMessage();
             SetExp();
-            SceneManager.LoadScene(1);
             Debug.Log("You have finished the game!");
+            Invoke("LoadOpenWorld", 5);
+        }
+    }
+
+    void LoadOpenWorld()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    void gameOverMessage()
+    {
+        // checking if number of user guesses is maxed out, i.e. game over
+        // doesn't yet work since countGuesses hasn't been used yet
+        if (countCorrectGuesses == gameGuesses)
+        {
+            if (gameWon)
+            {
+                winMessage.SetActive(true);
+                winParticles.Play();    
+            } else
+            {
+                lossMessage.SetActive(true);
+            }
         }
     }
 

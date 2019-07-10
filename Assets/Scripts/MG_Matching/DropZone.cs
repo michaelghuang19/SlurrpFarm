@@ -10,12 +10,16 @@ public class DropZone : DragAndDrop
     private float y;
     private GameObject[] shapes;
 
-    private ParticleSystem correct;
+    private ParticleSystem correctCheese;
+    private ParticleSystem correctTomato;
+    private ParticleSystem correctBanana;
 
     void Start()
     {
-        correct = GameObject.Find("Correct").GetComponent<ParticleSystem>();
-        
+        correctCheese = GameObject.Find("correctCheese").GetComponent<ParticleSystem>();
+        correctTomato = GameObject.Find("correctTomato").GetComponent<ParticleSystem>();
+        correctBanana = GameObject.Find("correctBanana").GetComponent<ParticleSystem>();
+
         shapes = Resources.LoadAll<GameObject>("Sprites/MinigameElements/Shapes");
 
         int index = Random.Range(0, shapes.Length);
@@ -43,7 +47,7 @@ public class DropZone : DragAndDrop
                 if (shape.name == "Cheese" || shape.name == "Cheese(Clone)")
                 {
                     shape.transform.position = new Vector2(6.5F, 3.5F);
-                    correct.Play();
+                    correctCheese.Play();
                     GetComponent<SystemProps>().AddScore(shape);
                 } else
                 {
@@ -63,7 +67,7 @@ public class DropZone : DragAndDrop
                 if (shape.name == "Tomato" || shape.name == "Tomato(Clone)")
                 {
                     shape.transform.position = new Vector2(6, 0);
-                    correct.Play();
+                    correctTomato.Play();
                     GetComponent<SystemProps>().AddScore(shape);
                 }
                 else
@@ -84,7 +88,7 @@ public class DropZone : DragAndDrop
                 if (shape.name == "Banana" || shape.name == "Banana(Clone)")
                 {
                     shape.transform.position = new Vector2(5, -3.5F);
-                    correct.Play();
+                    correctBanana.Play();
                     GetComponent<SystemProps>().AddScore(shape);
                 }
                 else
