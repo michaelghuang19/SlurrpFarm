@@ -95,20 +95,24 @@ public class GameController : MonoBehaviour
             btns[firstGuessIndex].image.sprite = gameCards[firstGuessIndex];
 
             //Debug.Log("First guess changed sprite to: " + firstGuessIndex);
+
             
         } else if (!secondGuess) {
-            secondGuess = true;
-            //Debug.Log("Second Guess, Name: " + name);
             secondGuessIndex = int.Parse(name);
-            btns[secondGuessIndex].image.sprite = gameCards[secondGuessIndex];
-            secondGuessCard = gameCards[secondGuessIndex].name;
-            //Debug.Log("Second guess changed sprite to: " + secondGuessIndex);
-            StartCoroutine(CheckIfThePuzzlesMatch());
+            if (secondGuessIndex != firstGuessIndex) {
+                secondGuess = true;
+                //Debug.Log("Second Guess, Name: " + name);
+                btns[secondGuessIndex].image.sprite = gameCards[secondGuessIndex];
+                secondGuessCard = gameCards[secondGuessIndex].name;
+                //Debug.Log("Second guess changed sprite to: " + secondGuessIndex);
+                StartCoroutine(CheckIfThePuzzlesMatch());
+            }
         }
+
     }
 
     IEnumerator CheckIfThePuzzlesMatch() {
-        yield return new WaitForSeconds (1f);
+        yield return new WaitForSeconds (1.5f);
 
         if (firstGuessCard == secondGuessCard) {
 
@@ -123,7 +127,7 @@ public class GameController : MonoBehaviour
 
         } else {
             btns[firstGuessIndex].image.sprite = bgImage;
-            btns[secondGuessIndex].image.sprite = bgImage;
+            btns[secondGuessIndex].image.sprite = bgImage; 
             
         }
         firstGuess = false;
