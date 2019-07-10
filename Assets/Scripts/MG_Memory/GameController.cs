@@ -200,8 +200,11 @@ public class GameController : MonoBehaviour
         Debug.Log("CurExp: " + CurExp);
         PlayerPrefs.SetInt("CurEXP", CurExp);
         PlayerPrefs.SetInt("PrevGameCount", PrevGameCount);
-        if (levelChanged) {
+        if (levelChanged) { 
             PlayerPrefs.SetInt("PlayerLevel", PlayerLevel);
+            PlayerPrefs.SetInt("LevelChanged", 1);
+        } else {
+            PlayerPrefs.SetInt("LevelChanged", 0);
         }
         if (gameChanged) {
             PlayerPrefs.SetInt("PrevGame", GameID);
@@ -209,6 +212,9 @@ public class GameController : MonoBehaviour
     }
 
     void CheckDefaultPrefs() {
+        if (!PlayerPrefs.HasKey("LevelChanged")) {
+            PlayerPrefs.SetInt("LevelChanged", 0);
+        }
         if (!PlayerPrefs.HasKey("PlayerLevel")) {
             PlayerPrefs.SetInt("PlayerLevel", 1);
         }
