@@ -115,9 +115,13 @@ public class SystemProps : MonoBehaviour
         CheckDefaultPrefs();
         
         int PlayerLevel = PlayerPrefs.GetInt("PlayerLevel");
-        int CurEXP = PlayerPrefs.GetInt("CurExp");
+        int CurExp = PlayerPrefs.GetInt("CurEXP");
         int PrevGameCount = PlayerPrefs.GetInt("PrevGameCount");
         int PrevGame = PlayerPrefs.GetInt("PrevGame");
+        Debug.Log("Level: " + PlayerLevel);
+        Debug.Log("CurExp: " + CurExp);
+
+
 
         bool levelChanged = false;
         bool gameChanged = false;
@@ -137,31 +141,36 @@ public class SystemProps : MonoBehaviour
             PrevGameCount +=1;
         }
         exp = (int) (exp * (Math.Pow(0.8, PrevGameCount - 1)));
-        CurEXP += exp;
+        Debug.Log("Exp: " + exp);
+        CurExp += exp;
         if (PlayerLevel == 1) {
-            if (CurEXP >= 100) {
+            if (CurExp >= 100) {
                 PlayerLevel += 1;
-                CurEXP -= 100;
+                CurExp -= 100;
                 levelChanged = true;
             }
         } else if (PlayerLevel == 2) {
-            if (CurEXP >= 200) {
+            if (CurExp >= 200) {
                 PlayerLevel += 1;
-                CurEXP -= 200;
+                CurExp -= 200;
                 levelChanged = true;
             }
         } else {
-            if (CurEXP >= 300) {
+            if (CurExp >= 300) {
                 PlayerLevel += 1;
-                CurEXP -= 300;
+                CurExp -= 300;
                 levelChanged = true;
             }
         }
 
-        PlayerPrefs.SetInt("CurEXP", CurEXP);
+        Debug.Log("CurExp: " + CurExp);
+        PlayerPrefs.SetInt("CurEXP", CurExp);
         PlayerPrefs.SetInt("PrevGameCount", PrevGameCount);
-        if (levelChanged) {
+        if (levelChanged) { 
             PlayerPrefs.SetInt("PlayerLevel", PlayerLevel);
+            PlayerPrefs.SetInt("LevelChanged", 1);
+        } else {
+            PlayerPrefs.SetInt("LevelChanged", 0);
         }
         if (gameChanged) {
             PlayerPrefs.SetInt("PrevGame", GameID);

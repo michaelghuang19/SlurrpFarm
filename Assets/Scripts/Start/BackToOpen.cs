@@ -20,6 +20,7 @@ public class BackToOpen : MonoBehaviour
     {
         UICanvas.gameObject.SetActive(true);
         DiscountCanvas.gameObject.SetActive(false);
+        PlayerPrefs.SetInt("LevelChanged", 0);
     }
 
     public void releaseLevelParticles()

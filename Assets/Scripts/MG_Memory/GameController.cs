@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     private int countGuesses;
     private int countCorrectGuesses;
     private int gameGuesses;
+    private int allowedGuesses = 10;
 
     private int firstGuessIndex, secondGuessIndex;
     private string firstGuessCard, secondGuessCard;
@@ -130,22 +131,28 @@ public class GameController : MonoBehaviour
             btns[firstGuessIndex].image.color = new Color(0,0,0,0);
             btns[secondGuessIndex].image.color = new Color(0,0,0,0);
 
-            CheckIfTheGameIsFinished();
-
+            countCorrectGuesses++;
         } else {
             btns[firstGuessIndex].image.sprite = bgImage;
             btns[secondGuessIndex].image.sprite = bgImage; 
             
         }
+        countGuesses++;
+        CheckIfTheGameIsFinished();
         firstGuess = false;
         secondGuess = false;
     }
 
     void CheckIfTheGameIsFinished() {
-        countCorrectGuesses++;
-
+        bool isOver = false;
         if (countCorrectGuesses == gameGuesses) {
             gameWon = true;
+            isOver = true;
+        } else if (countGuesses >= allowedGuesses){
+            gameWon = false;
+            isOver = true;
+        }
+        if (isOver) {
             gameOverMessage();
             SetExp();
             Debug.Log("You have finished the game!");
@@ -162,16 +169,13 @@ public class GameController : MonoBehaviour
     {
         // checking if number of user guesses is maxed out, i.e. game over
         // doesn't yet work since countGuesses hasn't been used yet
-        if (countCorrectGuesses == gameGuesses)
+        if (gameWon)
         {
-            if (gameWon)
-            {
-                winMessage.SetActive(true);
-                winParticles.Play();    
-            } else
-            {
-                lossMessage.SetActive(true);
-            }
+            winMessage.SetActive(true);
+            winParticles.Play();    
+        } else
+        {
+            lossMessage.SetActive(true);
         }
     }
 
