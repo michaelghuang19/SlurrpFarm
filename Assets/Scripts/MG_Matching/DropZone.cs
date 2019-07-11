@@ -55,7 +55,6 @@ public class DropZone : DragAndDrop
                 }
             }
         }
-        
     }
 
     void TomatoCheck()
@@ -76,7 +75,6 @@ public class DropZone : DragAndDrop
                 }
             }
         }
-
     }
 
     void BananaCheck()
@@ -95,7 +93,6 @@ public class DropZone : DragAndDrop
                 {
                     shape.transform.position = new Vector2(-6,0);
                 }
-
             }
         }
     }
