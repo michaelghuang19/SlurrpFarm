@@ -246,9 +246,7 @@ public class GameController : MonoBehaviour
     }
 
     void CheckDefaultPrefs() {
-        if (!PlayerPrefs.HasKey("LevelChanged")) {
-            PlayerPrefs.SetInt("LevelChanged", 0);
-        }
+        
         if (!PlayerPrefs.HasKey("PlayerLevel")) {
             PlayerPrefs.SetInt("PlayerLevel", 1);
         }

@@ -17,6 +17,7 @@ public class SystemProps : MonoBehaviour
     // adjustable time
     private float time = 31;
     private int GameID = 1;
+    private bool haveSetExp = false;
 
     void Start()
     {
@@ -40,6 +41,10 @@ public class SystemProps : MonoBehaviour
         else
         {
             gameover = true;
+            if (!haveSetExp) {
+                haveSetExp = true;
+                SetExp();
+            }
         }
     }
 
@@ -65,6 +70,7 @@ public class SystemProps : MonoBehaviour
             gameWon = true;
             timeOn = false;
             gameover = true;
+            SetExp();
         }
     }
 
@@ -100,14 +106,13 @@ public class SystemProps : MonoBehaviour
             {
                 GUI.Label(new Rect(10, height / 2, width / 4, 100), "You had " + shapesLeft + " ingredients left! Better luck next time", style);
             }
-
+            
             ExitGame();
         }
     }
 
     void ExitGame()
     {
-        SetExp();
         Invoke("LoadMenu", 5);
     }
 
@@ -118,8 +123,8 @@ public class SystemProps : MonoBehaviour
         int CurExp = PlayerPrefs.GetInt("CurEXP");
         int PrevGameCount = PlayerPrefs.GetInt("PrevGameCount");
         int PrevGame = PlayerPrefs.GetInt("PrevGame");
-        Debug.Log("Level: " + PlayerLevel);
-        Debug.Log("CurExp: " + CurExp);
+        //Debug.Log("Level: " + PlayerLevel);
+        //Debug.Log("CurExp: " + CurExp);
 
 
 
@@ -140,8 +145,9 @@ public class SystemProps : MonoBehaviour
         } else {
             PrevGameCount +=1;
         }
+        //Debug.Log(PrevGameCount + "");
         exp = (int) (exp * (Math.Pow(0.8, PrevGameCount - 1)));
-        Debug.Log("Exp: " + exp);
+        //Debug.Log("Exp: " + exp);
         CurExp += exp;
         if (PlayerLevel == 1) {
             if (CurExp >= 100) {
@@ -163,7 +169,7 @@ public class SystemProps : MonoBehaviour
             }
         }
 
-        Debug.Log("CurExp: " + CurExp);
+        //Debug.Log("CurExp: " + CurExp);
         PlayerPrefs.SetInt("CurEXP", CurExp);
         PlayerPrefs.SetInt("PrevGameCount", PrevGameCount);
         if (levelChanged) { 
@@ -178,6 +184,9 @@ public class SystemProps : MonoBehaviour
     }
 
     void CheckDefaultPrefs() {
+        if (!PlayerPrefs.HasKey("LevelChanged")) {
+            PlayerPrefs.SetInt("LevelChanged", 0);
+        }
         if (!PlayerPrefs.HasKey("PlayerLevel")) {
             PlayerPrefs.SetInt("PlayerLevel", 1);
         }
