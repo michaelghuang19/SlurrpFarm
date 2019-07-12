@@ -19,6 +19,10 @@ public class CheckDefaultPrefs : MonoBehaviour
         if (!PlayerPrefs.HasKey("PrevGameCount")) {
             PlayerPrefs.SetInt("PrevGameCount", 0);
         }
+        if(!PlayerPrefs.HasKey("PlayMusic"))
+        {
+            PlayerPrefs.SetInt("PlayMusic", 1);
+        }
     }
 
     // Update is called once per frame
