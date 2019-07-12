@@ -19,16 +19,25 @@ public class SystemProps : MonoBehaviour
     private int GameID = 1;
     private bool haveSetExp = false;
 
+    public AudioClip MusicClip;
+    public AudioSource MusicSource;
+
     void Start()
     {
         shapes = Resources.LoadAll<GameObject>("Sprites/MinigameElements/Shapes");
 
+        // MusicClip = GameObject.FindGameObjectWithTag("CheerSound").GetComponent<AudioSource>();
+        MusicSource = GameObject.FindGameObjectWithTag("CheerSound").GetComponent<AudioSource>();
+        // GetComponent<AudioSource>().clip = MusicSource.clip;
+
+        MusicSource.clip = MusicClip;
     }
 
 
 
     void Update()
     {
+        MusicSource.Play();
         if (time <= 0)
         {
             timeOn = false;
@@ -86,9 +95,9 @@ public class SystemProps : MonoBehaviour
         int height = Screen.height;
 
         GUIStyle style = new GUIStyle();
-        style.normal.textColor = Color.red;
+        style.normal.textColor = Color.white;
         style.fontSize = 100;
-        style.font = (Font)Resources.Load("StarkerMarker/Fonts/StarkerMarker", typeof(Font));
+        style.font = (Font)Resources.Load("Thaleah_PixelFont/Materials/ThaleahFat_TTF", typeof(Font));
 
         int timeinseconds = (int) time;
         GUI.Box(new Rect(10, 10, width / 3, 100), "Time Left : " + timeinseconds.ToString(), style);
