@@ -19,25 +19,25 @@ public class SystemProps : MonoBehaviour
     private int GameID = 1;
     private bool haveSetExp = false;
 
-    public AudioClip MusicClip;
-    public AudioSource MusicSource;
+    //public AudioClip MusicClip;
+    //public AudioSource MusicSource;
 
     void Start()
     {
         shapes = Resources.LoadAll<GameObject>("Sprites/MinigameElements/Shapes");
 
         // MusicClip = GameObject.FindGameObjectWithTag("CheerSound").GetComponent<AudioSource>();
-        MusicSource = GameObject.FindGameObjectWithTag("CheerSound").GetComponent<AudioSource>();
+        //MusicSource = GameObject.FindGameObjectWithTag("CheerSound").GetComponent<AudioSource>();
         // GetComponent<AudioSource>().clip = MusicSource.clip;
 
-        MusicSource.clip = MusicClip;
+        //MusicSource.clip = MusicClip;
     }
 
 
 
     void Update()
     {
-        MusicSource.Play();
+        //MusicSource.Play();
         if (time <= 0)
         {
             timeOn = false;
