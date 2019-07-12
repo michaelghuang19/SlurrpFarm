@@ -15,6 +15,11 @@ public class OpenToDrag : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+
+    public void OpenDuck() {
+        SceneManager.LoadScene(5);
+    }
+    
     // Update is called once per frame
     void Update()
     {

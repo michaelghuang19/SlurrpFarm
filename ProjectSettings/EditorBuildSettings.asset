@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 505e064ce7603194a9775107e277ca00
+  - enabled: 1
+    path: Assets/Scenes/Minigame_Duck.unity
+    guid: e763d5fa9ecac44578c562e685faab9e
   m_configObjects: {}
