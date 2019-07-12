@@ -15,7 +15,7 @@ public class SystemProps : MonoBehaviour
     private bool gameWon = false;
     private bool timeOn = true;
     // adjustable time
-    private float time = 31;
+    private float time = 46;
     private int GameID = 1;
     private bool haveSetExp = false;
 
