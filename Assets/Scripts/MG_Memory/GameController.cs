@@ -31,7 +31,12 @@ public class GameController : MonoBehaviour
     private GameObject winMessage;
     private GameObject lossMessage;
     private ParticleSystem winParticles;
-    
+
+    public AudioSource cardSetup;
+    public AudioSource cardFail;
+    public AudioSource cardSuccess;
+    public AudioSource cheer;
+
     //Awake() gets called before Start()
     void Awake() {
         allCards = Resources.LoadAll<Sprite> ("Sprites/Cards");
@@ -49,6 +54,16 @@ public class GameController : MonoBehaviour
 
         winMessage.SetActive(false);
         lossMessage.SetActive(false);
+
+        cardSetup = GameObject.Find("/Audio/CardSetup").GetComponent<AudioSource>();
+        cardFail = GameObject.Find("/Audio/CardFail").GetComponent<AudioSource>();
+        cardSuccess = GameObject.Find("/Audio/CardSuccess").GetComponent<AudioSource>();
+        cheer = GameObject.Find("/Audio/CheerSound").GetComponent<AudioSource>();
+
+        cardSetup.Stop();
+        cardFail.Stop();
+        cardSuccess.Stop();
+        cheer.Stop();
     }
 
     void GetButtons() {
@@ -75,9 +90,11 @@ public class GameController : MonoBehaviour
             index++;
         }
 
+        cardSetup.Play();
         Shuffle(gameCards);
-        
+
     }
+
 
 
     //Adds a onClick listener to each card's button programatically
@@ -96,6 +113,8 @@ public class GameController : MonoBehaviour
         string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
 
         if (!firstGuess) {
+            cardFail.Play();
+
             firstGuess = true;
             //Debug.Log("First Guess, Name: " + name);
             firstGuessIndex = int.Parse(name);
@@ -106,6 +125,7 @@ public class GameController : MonoBehaviour
 
             
         } else if (!secondGuess) {
+            cardFail.Play();
             secondGuessIndex = int.Parse(name);
             if (secondGuessIndex != firstGuessIndex) {
                 secondGuess = true;
@@ -123,6 +143,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds (1.5f);
 
         if (firstGuessCard == secondGuessCard) {
+            cardSuccess.Play();
 
             yield return new WaitForSeconds (.5f);
             btns[firstGuessIndex].interactable = false;
@@ -133,6 +154,8 @@ public class GameController : MonoBehaviour
 
             countCorrectGuesses++;
         } else {
+            cardFail.Play();
+
             btns[firstGuessIndex].image.sprite = bgImage;
             btns[secondGuessIndex].image.sprite = bgImage; 
             
@@ -146,6 +169,8 @@ public class GameController : MonoBehaviour
     void CheckIfTheGameIsFinished() {
         bool isOver = false;
         if (countCorrectGuesses == gameGuesses) {
+            cheer.Play();
+
             gameWon = true;
             isOver = true;
         } else if (countGuesses >= allowedGuesses){

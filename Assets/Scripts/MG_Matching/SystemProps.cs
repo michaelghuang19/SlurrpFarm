@@ -19,18 +19,14 @@ public class SystemProps : MonoBehaviour
     private int GameID = 1;
     private bool haveSetExp = false;
 
-    //public AudioClip MusicClip;
-    //public AudioSource MusicSource;
+    public AudioSource cheer;
 
     void Start()
     {
         shapes = Resources.LoadAll<GameObject>("Sprites/MinigameElements/Shapes");
+        cheer = GameObject.Find("CheerSound").GetComponent<AudioSource>();
 
-        // MusicClip = GameObject.FindGameObjectWithTag("CheerSound").GetComponent<AudioSource>();
-        //MusicSource = GameObject.FindGameObjectWithTag("CheerSound").GetComponent<AudioSource>();
-        // GetComponent<AudioSource>().clip = MusicSource.clip;
-
-        //MusicSource.clip = MusicClip;
+        cheer.Stop();
     }
 
 
@@ -110,7 +106,8 @@ public class SystemProps : MonoBehaviour
             // fix this, return to screen
             if (gameWon)
             {
-                GUI.Label(new Rect(10, height / 2, width / 4, 100), "All ingredients complete in " + (30 - timeinseconds) + " seconds!", style);
+                cheer.Play();
+                GUI.Label(new Rect(10, height / 2, width / 4, 100), "All ingredients complete in " + (46 - timeinseconds) + " seconds!", style);
             } else
             {
                 GUI.Label(new Rect(10, height / 2, width / 4, 100), "You had " + shapesLeft + " ingredients left! Better luck next time", style);
@@ -118,6 +115,11 @@ public class SystemProps : MonoBehaviour
             
             ExitGame();
         }
+    }
+
+    void LoadMenu()
+    {
+        SceneManager.LoadScene(1);
     }
 
     void ExitGame()
@@ -132,8 +134,8 @@ public class SystemProps : MonoBehaviour
         int CurExp = PlayerPrefs.GetInt("CurEXP");
         int PrevGameCount = PlayerPrefs.GetInt("PrevGameCount");
         int PrevGame = PlayerPrefs.GetInt("PrevGame");
-        //Debug.Log("Level: " + PlayerLevel);
-        //Debug.Log("CurExp: " + CurExp);
+        Debug.Log("Level: " + PlayerLevel);
+        Debug.Log("CurExp: " + CurExp);
 
 
 
@@ -193,9 +195,9 @@ public class SystemProps : MonoBehaviour
     }
 
     void CheckDefaultPrefs() {
-        if (!PlayerPrefs.HasKey("LevelChanged")) {
-            PlayerPrefs.SetInt("LevelChanged", 0);
-        }
+        // if (!PlayerPrefs.HasKey("LevelChanged")) {
+        //    PlayerPrefs.SetInt("LevelChanged", 0);
+        // }
         if (!PlayerPrefs.HasKey("PlayerLevel")) {
             PlayerPrefs.SetInt("PlayerLevel", 1);
         }
@@ -208,11 +210,6 @@ public class SystemProps : MonoBehaviour
         if (!PlayerPrefs.HasKey("PrevGameCount")) {
             PlayerPrefs.SetInt("PrevGameCount", 0);
         }
-    }
-
-    void LoadMenu()
-    {
-        SceneManager.LoadScene(1);
     }
 
 }
