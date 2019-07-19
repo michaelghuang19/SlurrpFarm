@@ -79,13 +79,13 @@ public class DropZone : DragAndDrop
 
     void BananaCheck()
     {
-        if (x >= 3 && x <= 6)
+        if (x >= 5 && x <= 8)
         {
-            if (y >= -4 && y <= -2)
+            if (y >= -5 && y <= -1)
             {
                 if (shape.name == "Banana" || shape.name == "Banana(Clone)")
                 {
-                    shape.transform.position = new Vector2(5, -3.5F);
+                    shape.transform.position = new Vector2(6.5F, -3.5F);
                     correctBanana.Play();
                     GetComponent<SystemProps>().AddScore(shape);
                 }

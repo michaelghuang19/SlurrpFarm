@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class Dialogue : MonoBehaviour
 {
-    public GameObject beardialogue;
+    public GameObject bearDialogue;
 
     // Start is called before the first frame update
     void Start()
     {
-        beardialogue = GameObject.Find("BearDialogue");
-
-        beardialogue.SetActive(false);
+        bearDialogue = GameObject.Find("BearUI");
+        bearDialogue.SetActive(false);
     }
 
     public void PlayBearDialogue()
     {
-        beardialogue.SetActive(true);
+        Debug.Log("Bear Clicked");
+        bearDialogue.SetActive(true);
+    }
+
+    public void StopBearDialogue()
+    {
+        Debug.Log("Dialogue Clicked");
+        bearDialogue.SetActive(false);
     }
 }
