@@ -7,6 +7,7 @@ public class OpenToDuck : MonoBehaviour
 {
 
     public void OpenDuck() {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(4);
     }
+
 }

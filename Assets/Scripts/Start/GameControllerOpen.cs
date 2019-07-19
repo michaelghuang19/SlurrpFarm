@@ -9,15 +9,12 @@ public class GameControllerOpen : MonoBehaviour
     Canvas UICanvas;
     [SerializeField]
     Canvas DiscountCanvas;
-    public AudioSource backgroundMusic;
+    public Canvas settingsCanvas;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("gamecontroller start called");
-        bool playMusic = Convert.ToBoolean(PlayerPrefs.GetInt("PlayMusic"));
-        Debug.Log(playMusic);
-
+        settingsCanvas.gameObject.SetActive(false);
         bool levelledUp = Convert.ToBoolean(PlayerPrefs.GetInt("LevelChanged"));
         if (levelledUp) {
             UICanvas.gameObject.SetActive(false);

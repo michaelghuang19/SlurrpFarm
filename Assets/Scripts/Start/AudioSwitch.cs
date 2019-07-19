@@ -35,13 +35,15 @@ public class AudioSwitch : MonoBehaviour
     }
     public void OnChangeValue()
     {
+        Debug.Log("Clicked toggle");
         bool onoffSwitch = gameObject.GetComponent<Toggle>().isOn;
+     
         if(onoffSwitch)
         {
             switchOn.SetActive(true);
             switchOff.SetActive(false);
             PlayerPrefs.SetInt("PlayMusic", 1);
-            backgroundMusic.UnPause();
+            backgroundMusic.volume = 1.0f;
             
         }
         if(!onoffSwitch)
@@ -49,7 +51,7 @@ public class AudioSwitch : MonoBehaviour
             switchOn.SetActive(false);
             switchOff.SetActive(true);
             PlayerPrefs.SetInt("PlayMusic", 0);
-            backgroundMusic.Pause();
+            backgroundMusic.volume = 0.0f;
 
         }
     }
@@ -63,13 +65,16 @@ public class AudioSwitch : MonoBehaviour
         {
             switchOff.SetActive(false);
             switchOn.SetActive(true);
-            backgroundMusic.Pause();
+            backgroundMusic.volume = 1.0f;
+            
         }
         else
         {
             switchOn.SetActive(false);
             switchOff.SetActive(true);
-            backgroundMusic.Pause();
-       }
+            backgroundMusic.volume = 0.0f;
+            gameObject.GetComponent<Toggle>().isOn = false; 
+
+        }
     }
 }

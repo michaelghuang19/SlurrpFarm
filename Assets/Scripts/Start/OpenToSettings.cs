@@ -5,14 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class OpenToSettings : MonoBehaviour
 {
+    public Canvas settingsCanvas;
+    public Canvas cameraCanvas;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-    public void OpenSettings()
+    public void SettingsEnable()
     {
-        SceneManager.LoadScene(4);
+        settingsCanvas.gameObject.SetActive(true);
+        cameraCanvas.gameObject.SetActive(false);
+    }
+    public void SettingsDisable()
+    {
+        settingsCanvas.gameObject.SetActive(false);
+        cameraCanvas.gameObject.SetActive(true);
     }
     // Update is called once per frame
     void Update()
