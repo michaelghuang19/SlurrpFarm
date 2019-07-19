@@ -81,11 +81,9 @@ public class DropZone : DragAndDrop
     {
         if (x >= 5 && x <= 8)
         {
-<<<<<<< HEAD
-            if (y >= -5 && y <= -1)
-=======
+
             if (y >= -5 && y <= -2)
->>>>>>> f514361f3c539f61766bbaf209cac0a4124cef8b
+
             {
                 if (shape.name == "Banana" || shape.name == "Banana(Clone)")
                 {
