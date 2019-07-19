@@ -781,9 +781,9 @@ GameObject:
   - component: {fileID: 506330812}
   - component: {fileID: 506330817}
   - component: {fileID: 506330816}
-  - component: {fileID: 506330815}
   - component: {fileID: 506330814}
   - component: {fileID: 506330813}
+  - component: {fileID: 506330815}
   m_Layer: 0
   m_Name: bearimage
   m_TagString: Untagged
@@ -879,19 +879,22 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!65 &506330815
-BoxCollider:
+--- !u!70 &506330815
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506330811}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 12.105245, y: 16.969774, z: 1}
-  m_Center: {x: -0.1235049, y: -1.6279835, z: 0}
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.7420541, y: -4.7710223}
+  m_Size: {x: 15.87472, y: 15.87472}
+  m_Direction: 0
 --- !u!114 &506330816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6558,7 +6561,6 @@ GameObject:
   - component: {fileID: 1056000567}
   - component: {fileID: 1056000566}
   - component: {fileID: 1056000565}
-  - component: {fileID: 1056000568}
   - component: {fileID: 1056000569}
   m_Layer: 5
   m_Name: DragButton
@@ -6631,7 +6633,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1056000568}
+      - m_Target: {fileID: 1416841007}
         m_MethodName: OpenDrag
         m_Mode: 1
         m_Arguments:
@@ -6682,18 +6684,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056000563}
   m_CullTransparentMesh: 0
---- !u!114 &1056000568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056000563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c79ce122938c3545a8af7c03a5cf51b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1056000569
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7305,7 +7295,6 @@ GameObject:
   - component: {fileID: 1424112410}
   - component: {fileID: 1424112409}
   - component: {fileID: 1424112408}
-  - component: {fileID: 1424112407}
   - component: {fileID: 1424112411}
   m_Layer: 5
   m_Name: MemoryButton
@@ -7335,18 +7324,6 @@ RectTransform:
   m_AnchoredPosition: {x: 136, y: 189}
   m_SizeDelta: {x: 49.4, y: 63.9}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1424112407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424112405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 291de30e4f9029c40813b64ae3962b81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1424112408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7390,7 +7367,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1424112407}
+      - m_Target: {fileID: 1416841007}
         m_MethodName: OpenMemory
         m_Mode: 1
         m_Arguments:
@@ -7940,7 +7917,6 @@ GameObject:
   - component: {fileID: 1684070716}
   - component: {fileID: 1684070720}
   - component: {fileID: 1684070719}
-  - component: {fileID: 1684070718}
   - component: {fileID: 1684070717}
   m_Layer: 5
   m_Name: Sandbox
@@ -8011,7 +7987,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1684070718}
+      - m_Target: {fileID: 1416841007}
         m_MethodName: OpenDuck
         m_Mode: 1
         m_Arguments:
@@ -8024,18 +8000,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &1684070718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684070715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c79ce122938c3545a8af7c03a5cf51b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1684070719
 MonoBehaviour:
   m_ObjectHideFlags: 0

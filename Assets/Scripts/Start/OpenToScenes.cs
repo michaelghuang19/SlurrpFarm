@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class OpenToSettings : MonoBehaviour
+public class OpenToScenes : MonoBehaviour
 {
     public Canvas settingsCanvas;
     public Canvas cameraCanvas;
@@ -22,9 +22,18 @@ public class OpenToSettings : MonoBehaviour
         settingsCanvas.gameObject.SetActive(false);
         cameraCanvas.gameObject.SetActive(true);
     }
-    // Update is called once per frame
-    void Update()
+    public void OpenDrag()
     {
-        
+        SceneManager.LoadScene(3);
+    }
+    public void OpenDuck()
+    {
+        SceneManager.LoadScene(4);
+    }
+    public void OpenMemory()
+    {
+        Firebase.Analytics.FirebaseAnalytics.LogEvent("progress", "percent", 0.4f);
+        Debug.Log("Firebase eventLevelStart called");
+        SceneManager.LoadScene(2);
     }
 }
