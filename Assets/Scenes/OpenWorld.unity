@@ -6074,6 +6074,7 @@ GameObject:
   - component: {fileID: 759379891}
   - component: {fileID: 759379892}
   - component: {fileID: 759379893}
+  - component: {fileID: 759379894}
   m_Layer: 0
   m_Name: Monkey
   m_TagString: Untagged
@@ -6120,7 +6121,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c26ebec2258eae54aab741e263cde56b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9af5ef8da69a3c843ae0e38f6dda6c12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6205,6 +6206,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!95 &759379894
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759379888}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95af4869551c4054b87c46f166e66316, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &764417020
 GameObject:
   m_ObjectHideFlags: 0
@@ -6721,7 +6741,7 @@ GameObject:
   - component: {fileID: 1070921782}
   - component: {fileID: 1070921781}
   m_Layer: 5
-  m_Name: FloorGrassToBricksSquare (1)
+  m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6766,7 +6786,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e8c4ccc65427f42d38677d80db25d82f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1ace25796fd46644583e1218790726a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6786,7 +6806,7 @@ Transform:
   m_GameObject: {fileID: 1070921780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 697, y: 271, z: 90}
-  m_LocalScale: {x: 17.2528, y: 17.2528, z: 0.66432244}
+  m_LocalScale: {x: 33.14291, y: 33.14291, z: 1.2761742}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
