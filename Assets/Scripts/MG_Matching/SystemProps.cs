@@ -72,10 +72,10 @@ public class SystemProps : MonoBehaviour
         }
         else
         {
+            SetExp();
             gameWon = true;
             timeOn = false;
             gameover = true;
-            SetExp();
         }
     }
 

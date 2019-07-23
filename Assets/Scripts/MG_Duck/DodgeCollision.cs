@@ -9,7 +9,7 @@ public class DodgeCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dodgeSound = GetComponent<AudioSource> ();
+        dodgeSound  = GameObject.Find("/Audio/DodgeSound").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -19,13 +19,13 @@ public class DodgeCollision : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("Collision Detected");
+        //Debug.Log("Collision Detected");
         if (collision.gameObject.name == "Player") {
             GameObject go = GameObject.Find ("GameController");
+            dodgeSound.Play();
             int score = go.GetComponent<DuckGameController>().score;
             score --;
             go.GetComponent<DuckGameController>().score = score;
-            dodgeSound.Play();
             Destroy(gameObject);
         } else if (collision.gameObject.name == "Wall") {
             GameObject go = GameObject.Find("GameController");

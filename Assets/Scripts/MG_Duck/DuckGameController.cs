@@ -20,7 +20,7 @@ public class DuckGameController : MonoBehaviour
     public int score = 0;
     private int itemsLeft = 10;
     private bool gameOver = false;
-    private float speed = -5f;
+    private float speed = -7.5f;
     private int GameID = 3;
 
     private Queue curObjs = new Queue();

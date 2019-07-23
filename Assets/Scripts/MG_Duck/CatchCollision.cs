@@ -8,7 +8,7 @@ public class CatchCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hitSound = GetComponent<AudioSource> ();
+        hitSound = GameObject.Find("/Audio/CatchSound").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -18,8 +18,9 @@ public class CatchCollision : MonoBehaviour
     }
     
     void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("Collision Detected");
+        //Debug.Log("Collision Detected");
         if (collision.gameObject.name == "Player") {
+            Debug.Log("Play hit");
             hitSound.Play();
             Destroy(gameObject); 
             GameObject go = GameObject.Find ("GameController");
