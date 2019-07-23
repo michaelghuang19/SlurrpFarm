@@ -40,13 +40,13 @@ public class DropZone : DragAndDrop
 
     void CheeseCheck()
     {
-        if (x >= 5 && x <= 8)
+        if (x >= 4 && x <= 8)
         {
-            if (y >= 2.5 && y <= 4)
+            if (y >= 2.5 && y <= 4.5)
             {
                 if (shape.name == "Cheese" || shape.name == "Cheese(Clone)")
                 {
-                    shape.transform.position = new Vector2(6.5F, 3.5F);
+                    shape.transform.position = new Vector2(6, 3.5F);
                     correctCheese.Play();
                     GetComponent<SystemProps>().AddScore(shape);
                 } else
@@ -59,13 +59,13 @@ public class DropZone : DragAndDrop
 
     void TomatoCheck()
     {
-        if (x >= 4 && x <= 7)
+        if (x >= 4 && x <= 8)
         {
             if (y >= -1.5 && y <= 1.5)
             {
                 if (shape.name == "Tomato" || shape.name == "Tomato(Clone)")
                 {
-                    shape.transform.position = new Vector2(6, 0);
+                    shape.transform.position = new Vector2(6, 0.5F);
                     correctTomato.Play();
                     GetComponent<SystemProps>().AddScore(shape);
                 }
@@ -79,7 +79,7 @@ public class DropZone : DragAndDrop
 
     void BananaCheck()
     {
-        if (x >= 5 && x <= 8)
+        if (x >= 4 && x <= 8)
         {
 
             if (y >= -5 && y <= -2)
@@ -87,7 +87,7 @@ public class DropZone : DragAndDrop
             {
                 if (shape.name == "Banana" || shape.name == "Banana(Clone)")
                 {
-                    shape.transform.position = new Vector2(6.5F, -3.5F);
+                    shape.transform.position = new Vector2(6, -3.5F);
                     correctBanana.Play();
                     GetComponent<SystemProps>().AddScore(shape);
                 }

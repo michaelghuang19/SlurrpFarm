@@ -20,6 +20,7 @@ public class SystemProps : MonoBehaviour
     private bool haveSetExp = false;
 
     public AudioSource cheer;
+    public AudioSource bg;
 
     void Start()
     {
@@ -106,6 +107,7 @@ public class SystemProps : MonoBehaviour
             // fix this, return to screen
             if (gameWon)
             {
+                Debug.Log("Playing cheer!");
                 cheer.Play();
                 GUI.Label(new Rect(10, height / 2, width / 4, 100), "All ingredients complete in " + (46 - timeinseconds) + " seconds!", style);
             } else
