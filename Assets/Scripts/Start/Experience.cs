@@ -12,11 +12,12 @@ public class Experience : MonoBehaviour
     public Text currentLevelText;
     public Text currentExpText;
     public Image expBar;
+    public Text nameText;
     float originalSize;
     // Start is called before the first frame update
     void Start()
     {
-       
+        nameText.text = PlayerPrefs.GetString("Name");
         
         
     }
