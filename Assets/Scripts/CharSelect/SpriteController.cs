@@ -11,13 +11,14 @@ public class SpriteController : MonoBehaviour
     private int index = 0;
 
     public Text name;
+    public Text age;
 
     // Start is called before the first frame update
     void Start()
     {
-        sprites = Resources.LoadAll<GameObject>("CharacterSelect/Characters/GameObjects");
+        //sprites = Resources.LoadAll<GameObject>("CharacterSelect/Characters/GameObjects");
 
-        CreateSprite();
+        //CreateSprite();
     }
 
     void CreateSprite()
@@ -36,6 +37,17 @@ public class SpriteController : MonoBehaviour
         PlayerPrefs.SetString("Name", nameString);
 
         Debug.Log("Saved name is " + PlayerPrefs.GetString("Name"));
+    }
+
+    public void SaveAge()
+    {
+        Debug.Log(age.text);
+
+        int ageInteger = int.Parse(age.text);
+
+        PlayerPrefs.SetInt("Age", ageInteger);
+
+        Debug.Log("Saved age is " + PlayerPrefs.GetInt("Age"));
     }
 
     public void MoveLeft()
