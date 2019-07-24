@@ -13,7 +13,7 @@ public class SystemProps : MonoBehaviour
     private GameObject[] shapes;
     private bool gameover = false;
     private bool gameWon = false;
-    private bool timeOn = true;
+    private bool timeOn = false;
     // adjustable time
     private float time = 46;
     private int GameID = 1;
@@ -30,7 +30,10 @@ public class SystemProps : MonoBehaviour
         cheer.Stop();
     }
 
-
+    public void StartTime()
+    {
+        timeOn = true;
+    }
 
     void Update()
     {

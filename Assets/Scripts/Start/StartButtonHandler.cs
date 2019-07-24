@@ -15,7 +15,7 @@ public class StartButtonHandler : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Start Button Clicked");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(5);
     }
 
     // Update is called once per frame
