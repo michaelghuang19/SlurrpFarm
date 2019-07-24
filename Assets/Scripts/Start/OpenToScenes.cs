@@ -7,6 +7,7 @@ public class OpenToScenes : MonoBehaviour
 {
     public Canvas settingsCanvas;
     public Canvas cameraCanvas;
+    public Canvas instructionCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,5 +42,9 @@ public class OpenToScenes : MonoBehaviour
         
         Debug.Log("Firebase eventLevelStart called");
         SceneManager.LoadScene(2);
+    }
+    public void DisableInstruction()
+    {
+        instructionCanvas.gameObject.SetActive(false);
     }
 }
