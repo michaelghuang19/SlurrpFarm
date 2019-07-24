@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.UI;
+
 public class SpriteController : MonoBehaviour
 {
     private GameObject[] sprites;
     private GameObject current;
     private int index = 0;
+
+    public Text name;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +23,19 @@ public class SpriteController : MonoBehaviour
     void CreateSprite()
     {
         // TODO: Check this out
-        current = Instantiate(sprites[index]) as GameObject;
-        current.transform.position = new Vector2(5, 0);
+        current = Instantiate(sprites[2]) as GameObject;
+        current.transform.position = new Vector2(0, 0);
+    }
+
+    public void SaveName()
+    {
+        Debug.Log(name.text);
+
+        string nameString = name.text;
+
+        PlayerPrefs.SetString("Name", nameString);
+
+        Debug.Log("Saved name is " + PlayerPrefs.GetString("Name"));
     }
 
     public void MoveLeft()
@@ -48,6 +63,6 @@ public class SpriteController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log(name.text);
     }
 }
