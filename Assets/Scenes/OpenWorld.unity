@@ -227,7 +227,7 @@ MonoBehaviour:
   currentLevelText: {fileID: 542326885}
   currentExpText: {fileID: 1345527594}
   expBar: {fileID: 110983256}
-  nameText: {fileID: 1266196756}
+  nameText: {fileID: 0}
 --- !u!1 &196851547
 GameObject:
   m_ObjectHideFlags: 0
@@ -7149,6 +7149,7 @@ MonoBehaviour:
   UICanvas: {fileID: 2111075169}
   DiscountCanvas: {fileID: 885192564}
   settingsCanvas: {fileID: 1031165660}
+  cognitoIdentityPoolString: 
 --- !u!4 &1354844553
 Transform:
   m_ObjectHideFlags: 0
