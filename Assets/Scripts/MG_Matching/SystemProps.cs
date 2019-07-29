@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SystemProps : MonoBehaviour
 {
-    public int score = 0;
+    public int score = 0;  
     public int shapesLeft = 10;
     private GameObject correctShape;
     private GameObject[] shapes;
@@ -19,13 +19,34 @@ public class SystemProps : MonoBehaviour
     private int GameID = 1;
     private bool haveSetExp = false;
 
+    private GameObject winMessage;
+    private GameObject lossMessage;
+    private ParticleSystem winParticles;
+
     public AudioSource cheer;
     public AudioSource bg;
 
     void Start()
     {
         shapes = Resources.LoadAll<GameObject>("Sprites/MinigameElements/Shapes");
+
+        winMessage = GameObject.Find("Win");
+        lossMessage = GameObject.Find("Loss");
+
+        winParticles = GameObject.Find("WinParticles").GetComponent<ParticleSystem>();
         cheer = GameObject.Find("CheerSound").GetComponent<AudioSource>();
+
+        winMessage.SetActive(false);
+        lossMessage.SetActive(false);
+
+        if (winMessage)
+        {
+            Debug.Log("winMessage exists!");
+        }
+        if (lossMessage)
+        {
+            Debug.Log("lossMessage exists!");
+        }
 
         cheer.Stop();
     }
@@ -38,7 +59,7 @@ public class SystemProps : MonoBehaviour
     void Update()
     {
         //MusicSource.Play();
-        if (time <= 0)
+        if (time <= 0 || shapesLeft == 0)
         {
             timeOn = false;
         }
@@ -49,10 +70,14 @@ public class SystemProps : MonoBehaviour
         }
         else
         {
-            gameover = true;
-            if (!haveSetExp) {
-                haveSetExp = true;
-                SetExp();
+            if (time <= 45)
+            {
+                gameover = true;
+                if (!haveSetExp)
+                {
+                    haveSetExp = true;
+                    SetExp();
+                }
             }
         }
     }
@@ -112,10 +137,13 @@ public class SystemProps : MonoBehaviour
             {
                 Debug.Log("Playing cheer!");
                 cheer.Play();
-                GUI.Label(new Rect(10, height / 2, width / 4, 100), "All ingredients complete in " + (46 - timeinseconds) + " seconds!", style);
+                winMessage.SetActive(true);
+                winParticles.Play();
+                // GUI.Label(new Rect(10, height / 2, width / 4, 100), "All ingredients complete in " + (46 - timeinseconds) + " seconds!", style);
             } else
             {
-                GUI.Label(new Rect(10, height / 2, width / 4, 100), "You had " + shapesLeft + " ingredients left! Better luck next time", style);
+                lossMessage.SetActive(true);
+                // GUI.Label(new Rect(10, height / 2, width / 4, 100), "You had " + shapesLeft + " ingredients left! Better luck next time", style);
             }
             
             ExitGame();
