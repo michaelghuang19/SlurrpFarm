@@ -42,7 +42,7 @@ public class GameControllerOpen : MonoBehaviour
         client = new AmazonDynamoDBClient(credentials, RegionEndpoint.USWest2);
         Context = new DynamoDBContext(client);
 
-        //genCode();
+        genCode();
 
         
 
@@ -72,7 +72,8 @@ public class GameControllerOpen : MonoBehaviour
 
         var finalString = new String(stringChars);
         CodeClass code = new CodeClass{
-            Code = finalString
+            Code = finalString,
+            Uses = 1
         };
         Context.SaveAsync(code, (result)=>{
             if(result.Exception == null) {
@@ -97,5 +98,8 @@ public class GameControllerOpen : MonoBehaviour
     {
         [DynamoDBHashKey]   // Hash key.
         public string Code { get; set; }
+        [DynamoDBProperty]
+        public int Uses {get; set;}
+
 
     }
