@@ -28,6 +28,7 @@ public class GameControllerOpen : MonoBehaviour
 
     void Awake() {
         UnityInitializer.AttachToGameObject(this.gameObject);
+        AWSConfigs.HttpClient = AWSConfigs.HttpClientOption.UnityWebRequest;
     }
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,9 @@ public class GameControllerOpen : MonoBehaviour
         client = new AmazonDynamoDBClient(credentials, RegionEndpoint.USWest2);
         Context = new DynamoDBContext(client);
 
+        //genCode();
+
+        
 
 
         settingsCanvas.gameObject.SetActive(false);
@@ -68,11 +72,13 @@ public class GameControllerOpen : MonoBehaviour
 
         var finalString = new String(stringChars);
         CodeClass code = new CodeClass{
-            DiscountCode = finalString
+            Code = finalString
         };
         Context.SaveAsync(code, (result)=>{
             if(result.Exception == null) {
                 Debug.Log("Save worked");
+            } else {
+                Debug.Log(result.Exception);
             }
         });
 
@@ -90,6 +96,6 @@ public class GameControllerOpen : MonoBehaviour
     public class CodeClass 
     {
         [DynamoDBHashKey]   // Hash key.
-        public string DiscountCode { get; set; }
+        public string Code { get; set; }
 
     }
