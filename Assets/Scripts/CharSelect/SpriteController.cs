@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SpriteController : MonoBehaviour
 {
@@ -28,26 +29,59 @@ public class SpriteController : MonoBehaviour
         current.transform.position = new Vector2(0, 0);
     }
 
-    public void SaveName()
+    public void SaveData()
     {
-        Debug.Log(name.text);
+        bool savedName = SaveName();
+        bool savedAge = SaveAge();
 
-        string nameString = name.text;
+        Debug.Log("savedName is " + savedName.ToString());
+        Debug.Log("savedAge is " + savedAge.ToString());
 
-        PlayerPrefs.SetString("Name", nameString);
-
-        Debug.Log("Saved name is " + PlayerPrefs.GetString("Name"));
+        if (savedName && savedAge)
+        {
+            Debug.Log("Loading open world");
+            SceneManager.LoadScene(1);
+        } 
     }
 
-    public void SaveAge()
+    public bool SaveName()
     {
-        Debug.Log(age.text);
+        
 
-        int ageInteger = int.Parse(age.text);
+        if (name.text=="")
+        {
+            // gameObject.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "Please enter your name!";
 
-        PlayerPrefs.SetInt("Age", ageInteger);
+            name.text = "Please enter your name!";
+            return false;
+        }
+        else
+        {
+            Debug.Log(name.text);
+            string nameString = name.text;
+            PlayerPrefs.SetString("Name", nameString);
+            Debug.Log("Saved name is " + PlayerPrefs.GetString("Name"));
+            return true;
+        }
+    }
 
-        Debug.Log("Saved age is " + PlayerPrefs.GetInt("Age"));
+    public bool SaveAge()
+    {
+        if (age.text=="")
+        {
+            // name.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "Please enter your age!";
+
+            age.text = "Please enter your age!";
+            return false;
+        }
+        else
+        {
+            Debug.Log(age.text);
+            int ageInteger = int.Parse(age.text);
+            PlayerPrefs.SetInt("Age", ageInteger);
+            Debug.Log("Saved age is " + PlayerPrefs.GetInt("Age"));
+            return true;
+        }
     }
 
     public void MoveLeft()
