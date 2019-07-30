@@ -17,8 +17,12 @@ public class Experience : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nameText.text = PlayerPrefs.GetString("Name");
-        
+        /* string name = PlayerPrefs.GetString("Name");
+        if (name != null) {
+            nameText.text = name;
+        } else {
+            nameText.text = "Patrick";
+        } */
         
     }
     void OnEnable()

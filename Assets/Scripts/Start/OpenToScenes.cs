@@ -33,14 +33,7 @@ public class OpenToScenes : MonoBehaviour
     }
     public void OpenMemory()
     {
-        Firebase.Analytics.FirebaseAnalytics
-            .LogEvent(
-                Firebase.Analytics.FirebaseAnalytics.EventJoinGroup,
-                Firebase.Analytics.FirebaseAnalytics.ParameterGroupId,
-                "spoon_welders"
-            );
-        
-        Debug.Log("Firebase eventLevelStart called");
+        //Debug.Log("Firebase eventLevelStart called");
         SceneManager.LoadScene(2);
     }
     public void DisableInstruction()

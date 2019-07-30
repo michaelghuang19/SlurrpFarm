@@ -23,6 +23,10 @@ public class DuckGameController : MonoBehaviour
     private float speed = -7.5f;
     private int GameID = 3;
 
+    private GameObject winMessage;
+    private GameObject lossMessage;
+    private ParticleSystem winParticles;
+
     private Queue curObjs = new Queue();
 
     void Awake()
@@ -36,6 +40,13 @@ public class DuckGameController : MonoBehaviour
         //Start createObjects(), which loops, and runs for x amount of times (based on difficulty later)
         Debug.Log("CreateObjects called");
         CreateObjects();
+
+        winMessage = GameObject.Find("Win");
+        lossMessage = GameObject.Find("Loss");
+        winParticles = GameObject.Find("WinParticles").GetComponent<ParticleSystem>();
+
+        winMessage.SetActive(false);
+        lossMessage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -68,8 +79,23 @@ public class DuckGameController : MonoBehaviour
     }
 
     private void endGame() {
+        DisplayEnd();
+
         SetExp();
         SceneManager.LoadScene(1);
+    }
+
+    private void DisplayEnd()
+    {
+        if (score > 2)
+        {
+            
+            winMessage.SetActive(true);
+            winParticles.Play();
+        } else
+        {
+            lossMessage.SetActive(true);
+        }
     }
 
     void SetExp() {
