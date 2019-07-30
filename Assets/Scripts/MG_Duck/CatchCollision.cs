@@ -25,9 +25,7 @@ public class CatchCollision : MonoBehaviour
             Destroy(gameObject); 
             GameObject go = GameObject.Find ("GameControllerDuck");
             go.GetComponent<DuckGameController>();
-            int score = 0;
-            //int score = go.GetComponent<DuckGameController>().score;
-
+            int score = go.GetComponent<DuckGameController>().score;
             score++;
             go.GetComponent<DuckGameController>().score = score;
         } else if (collision.gameObject.name == "Wall") {
