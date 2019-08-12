@@ -4923,7 +4923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -4943,7 +4943,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 815857789}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -4962,8 +4962,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131225947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.009358411, y: 0.009358411, z: 0.009358411}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 0.016259132, y: 0.016259132, z: 0.016259132}
   m_Children:
   - {fileID: 773245525}
   - {fileID: 974392704}
@@ -4972,8 +4972,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.08}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: 0.025, y: -0.049}
+  m_SizeDelta: {x: 1154.162, y: 664.775}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &136966142
 GameObject:
@@ -5154,8 +5154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.4, y: -17.38}
-  m_SizeDelta: {x: 118.07, y: 89.81}
+  m_AnchoredPosition: {x: 0, y: -4.615}
+  m_SizeDelta: {x: 68.97, y: 52.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &209669046
 MonoBehaviour:
@@ -5179,10 +5179,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
-    m_FontSize: 10
+    m_FontSize: 6
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -5190,8 +5190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Drag and drop the different foods into the matching shapes. Match 10 shapes
-    correctly within 45 seconds to win the game! Have fun and good luck!
+  m_Text: Match the shapes to the correct outline!
 --- !u!222 &209669047
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10003,7 +10002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 2
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -15007,8 +15006,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.549}
   m_AnchorMax: {x: 0.5, y: 0.549}
-  m_AnchoredPosition: {x: 0.015343, y: -52.924}
-  m_SizeDelta: {x: 127, y: 108.94}
+  m_AnchoredPosition: {x: 2.5145, y: -40.121}
+  m_SizeDelta: {x: 77.454, y: 66.461}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &773245526
 MonoBehaviour:
@@ -15102,7 +15101,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.409244
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -15270,8 +15269,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8, y: -432}
-  m_SizeDelta: {x: 255.64, y: 85.96}
+  m_AnchoredPosition: {x: 0, y: -222}
+  m_SizeDelta: {x: 176.5, y: 59.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974392705
 MonoBehaviour:
@@ -15368,7 +15367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.047169805, g: 0.0013349948, b: 0.0013349948, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -15797,8 +15796,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: -29}
-  m_SizeDelta: {x: 137.8, y: 28.8}
+  m_AnchoredPosition: {x: 5, y: 2.8578}
+  m_SizeDelta: {x: 69.6, y: 14.556}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1344044629
 MonoBehaviour:
@@ -15813,7 +15812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.909804, g: 0.82745105, b: 0.24313727, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -15822,18 +15821,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
-    m_FontSize: 16
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next
+  m_Text: Play
 --- !u!222 &1344044630
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16036,7 +16035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.3, y: 35.8}
+  m_AnchoredPosition: {x: 0.000000003048, y: 23.451}
   m_SizeDelta: {x: 109.62, y: 19.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1969909673
@@ -16061,10 +16060,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
-    m_FontSize: 16
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0

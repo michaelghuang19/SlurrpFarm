@@ -1781,10 +1781,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1820, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1970,6 +1970,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1860200673}
     m_Modifications:
+    - target: {fileID: 3270443454119101993, guid: e868568d55e4b6f428debba42f398013,
+        type: 3}
+      propertyPath: m_Name
+      value: Win
+      objectReference: {fileID: 0}
     - target: {fileID: 3270443454119101992, guid: e868568d55e4b6f428debba42f398013,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2075,11 +2080,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3270443454119101993, guid: e868568d55e4b6f428debba42f398013,
-        type: 3}
-      propertyPath: m_Name
-      value: Win
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e868568d55e4b6f428debba42f398013, type: 3}
 --- !u!1001 &3941151109779274051
@@ -2089,6 +2089,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1860200673}
     m_Modifications:
+    - target: {fileID: 3941151109441396542, guid: bbca260ffcdeb8941b51aa149ff3c1e6,
+        type: 3}
+      propertyPath: m_Name
+      value: Loss
+      objectReference: {fileID: 0}
     - target: {fileID: 3941151109441396541, guid: bbca260ffcdeb8941b51aa149ff3c1e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2194,11 +2199,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3941151109441396542, guid: bbca260ffcdeb8941b51aa149ff3c1e6,
-        type: 3}
-      propertyPath: m_Name
-      value: Loss
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbca260ffcdeb8941b51aa149ff3c1e6, type: 3}
 --- !u!1001 &5493092396308204058
@@ -2208,6 +2208,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1860200673}
     m_Modifications:
+    - target: {fileID: 5493092396759389355, guid: c88365e0d982ede40bbcbdc8eac91e17,
+        type: 3}
+      propertyPath: m_Name
+      value: WinParticles
+      objectReference: {fileID: 0}
     - target: {fileID: 5493092396759389352, guid: c88365e0d982ede40bbcbdc8eac91e17,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2262,11 +2267,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5493092396759389355, guid: c88365e0d982ede40bbcbdc8eac91e17,
-        type: 3}
-      propertyPath: m_Name
-      value: WinParticles
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c88365e0d982ede40bbcbdc8eac91e17, type: 3}
