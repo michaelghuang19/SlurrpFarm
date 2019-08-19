@@ -6970,6 +6970,7 @@ GameObject:
   - component: {fileID: 1266196755}
   - component: {fileID: 1266196757}
   - component: {fileID: 1266196756}
+  - component: {fileID: 1266196758}
   m_Layer: 5
   m_Name: NameText
   m_TagString: Untagged
@@ -7038,6 +7039,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266196754}
   m_CullTransparentMesh: 0
+--- !u!114 &1266196758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266196754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c23261d91fdb8a84e86ade99509602bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  username: {fileID: 1266196756}
 --- !u!1 &1345527592
 GameObject:
   m_ObjectHideFlags: 0
@@ -8676,11 +8690,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 692244205}
     m_Modifications:
-    - target: {fileID: 8971031641300856653, guid: 980288f78d48d4674abd03df8f3874fc,
-        type: 3}
-      propertyPath: m_Name
-      value: Trees
-      objectReference: {fileID: 0}
     - target: {fileID: 2931213081748863465, guid: 980288f78d48d4674abd03df8f3874fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8786,6 +8795,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8971031641300856653, guid: 980288f78d48d4674abd03df8f3874fc,
+        type: 3}
+      propertyPath: m_Name
+      value: Trees
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980288f78d48d4674abd03df8f3874fc, type: 3}
 --- !u!1001 &2698672449286103545
@@ -8795,11 +8809,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2698672449072273032, guid: 1e85beaea28764e6895ba00b85e3e400,
-        type: 3}
-      propertyPath: m_Name
-      value: PopupCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 2698672449072273037, guid: 1e85beaea28764e6895ba00b85e3e400,
         type: 3}
       propertyPath: m_Camera
@@ -8814,6 +8823,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2698672449072273032, guid: 1e85beaea28764e6895ba00b85e3e400,
+        type: 3}
+      propertyPath: m_Name
+      value: PopupCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 2698672449072273036, guid: 1e85beaea28764e6895ba00b85e3e400,
         type: 3}

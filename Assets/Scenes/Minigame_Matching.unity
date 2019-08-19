@@ -4869,7 +4869,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85167921}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 297, y: -174, z: -10}
+  m_LocalPosition: {x: 550, y: -300, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 346857923}
@@ -5100,7 +5100,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 125
+    m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -9948,7 +9948,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315170089}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 299, y: 159, z: -10}
+  m_LocalPosition: {x: 600, y: 300, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 346857923}
@@ -10002,10 +10002,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 2
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1820, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -14964,7 +14964,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743205836}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 296, y: 6, z: -10}
+  m_LocalPosition: {x: 550, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 346857923}
@@ -15451,10 +15451,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 125
+    m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -15501,7 +15501,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0e3fa6d15813c2943ba0cde5ba86e9f6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -16105,7 +16105,7 @@ PrefabInstance:
     - target: {fileID: 5493092396759389352, guid: c88365e0d982ede40bbcbdc8eac91e17,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -270
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 5493092396759389352, guid: c88365e0d982ede40bbcbdc8eac91e17,
         type: 3}
@@ -16155,17 +16155,17 @@ PrefabInstance:
     - target: {fileID: 5493092396759389352, guid: c88365e0d982ede40bbcbdc8eac91e17,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 75
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5493092396759389352, guid: c88365e0d982ede40bbcbdc8eac91e17,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 75
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5493092396759389352, guid: c88365e0d982ede40bbcbdc8eac91e17,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 75
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5493092396759389358, guid: c88365e0d982ede40bbcbdc8eac91e17,
         type: 3}
