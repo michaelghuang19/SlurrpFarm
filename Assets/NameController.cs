@@ -11,12 +11,13 @@ public class NameController : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.SetString("Name", "Patrick");
+        // PlayerPrefs.SetString("Name", "Patrick");
     }
 
     // Update is called once per frame
     void Update()
     {
+        // maybe could move this to start? 
         username.text = PlayerPrefs.GetString("Name");
     }
 }
