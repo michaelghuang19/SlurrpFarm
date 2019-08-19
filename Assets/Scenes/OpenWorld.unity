@@ -6548,7 +6548,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &1031165661
 RectTransform:
@@ -8657,7 +8657,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!224 &2111075170
 RectTransform:
@@ -8690,6 +8690,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 692244205}
     m_Modifications:
+    - target: {fileID: 8971031641300856653, guid: 980288f78d48d4674abd03df8f3874fc,
+        type: 3}
+      propertyPath: m_Name
+      value: Trees
+      objectReference: {fileID: 0}
     - target: {fileID: 2931213081748863465, guid: 980288f78d48d4674abd03df8f3874fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8795,11 +8800,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8971031641300856653, guid: 980288f78d48d4674abd03df8f3874fc,
-        type: 3}
-      propertyPath: m_Name
-      value: Trees
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980288f78d48d4674abd03df8f3874fc, type: 3}
 --- !u!1001 &2698672449286103545
@@ -8809,6 +8809,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2698672449072273032, guid: 1e85beaea28764e6895ba00b85e3e400,
+        type: 3}
+      propertyPath: m_Name
+      value: PopupCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 2698672449072273037, guid: 1e85beaea28764e6895ba00b85e3e400,
         type: 3}
       propertyPath: m_Camera
@@ -8823,11 +8828,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2698672449072273032, guid: 1e85beaea28764e6895ba00b85e3e400,
-        type: 3}
-      propertyPath: m_Name
-      value: PopupCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 2698672449072273036, guid: 1e85beaea28764e6895ba00b85e3e400,
         type: 3}
