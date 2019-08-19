@@ -4,7 +4,7 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 2
+  m_CurrentQuality: 5
   m_QualitySettings:
   - serializedVersion: 2
     name: Very Low
@@ -194,7 +194,7 @@ QualitySettings:
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Ultra
-    pixelLightCount: 4
+    pixelLightCount: 1
     shadows: 0
     shadowResolution: 0
     shadowProjection: 1
@@ -230,7 +230,7 @@ QualitySettings:
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Level 6
-    pixelLightCount: 4
+    pixelLightCount: 1
     shadows: 0
     shadowResolution: 0
     shadowProjection: 1
