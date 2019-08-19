@@ -105,9 +105,12 @@ public class SystemProps : MonoBehaviour {
         style.fontSize = 100;
         style.font = (Font) Resources.Load ("Thaleah_PixelFont/Materials/ThaleahFat_TTF", typeof (Font));
 
-        int timeinseconds = (int) time;
-        GUI.Box (new Rect (10, 10, width / 3, 100), "Time Left : " + timeinseconds.ToString (), style);
-        GUI.Box (new Rect (width / 3, 10, width / 3, 100), "Ingredients Left: " + shapesLeft.ToString (), style);
+        if (timeOn) {
+            int timeinseconds = (int) time;
+            GUI.Box (new Rect (10, 10, width / 3, 100), "Time Left : " + timeinseconds.ToString (), style);
+            GUI.Box (new Rect (width / 3, 10, width / 3, 100), "Ingredients Left: " + shapesLeft.ToString (), style);
+        }
+        
         if (gameover) {
 
             GetComponent<DragAndDrop> ().matching = false;
@@ -115,7 +118,8 @@ public class SystemProps : MonoBehaviour {
             // fix this, return to screen
             if (gameWon) {
                 Debug.Log ("Playing cheer!");
-                cheer.Play ();
+                // bg.Stop();
+                // cheer.Play ();
                 winMessage.SetActive (true);
                 winParticles.Play ();
                 // GUI.Label(new Rect(10, height / 2, width / 4, 100), "All ingredients complete in " + (46 - timeinseconds) + " seconds!", style);
