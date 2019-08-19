@@ -20,7 +20,7 @@ public class GameControllerOpen : MonoBehaviour {
     private AmazonDynamoDBClient client;
     private CognitoAWSCredentials credentials;
     private DynamoDBContext Context;
-    private bool codeAvail;
+    private String discCode;
 
     void Awake () {
         UnityInitializer.AttachToGameObject (this.gameObject);
@@ -36,8 +36,7 @@ public class GameControllerOpen : MonoBehaviour {
         client = new AmazonDynamoDBClient (credentials, RegionEndpoint.USWest2);
         Context = new DynamoDBContext (client);
 
-        genCode ();
-
+        discCode = "No Codes Available";
         settingsCanvas.gameObject.SetActive (false);
         bool levelledUp = Convert.ToBoolean (PlayerPrefs.GetInt ("LevelChanged"));
         if (levelledUp) {
@@ -45,6 +44,7 @@ public class GameControllerOpen : MonoBehaviour {
             codeText.text = genCode ();
             UICanvas.gameObject.SetActive (false);
             DiscountCanvas.gameObject.SetActive (true);
+            codeText.text = discCode;
         } else {
             UICanvas.gameObject.SetActive (true);
             DiscountCanvas.gameObject.SetActive (false);
@@ -65,15 +65,19 @@ public class GameControllerOpen : MonoBehaviour {
             Code = finalString,
             Uses = 1
         };
+        discCode = finalString;
+
+        bool codeAvail = false;
 
         Context.SaveAsync (code, (result) => {
             if (result.Exception == null) {
-                Debug.Log ("Save worked");
                 codeAvail = true;
+                Debug.Log ("Save worked: aval " + codeAvail);
             } else {
-                Debug.Log (result.Exception);
+                Debug.Log ("AWS Error: " + result.Exception);
             }
         });
+        Debug.Log("Avail: " + codeAvail);
         if (codeAvail) { return finalString; } else { return "No Codes Available"; }
     }
 
