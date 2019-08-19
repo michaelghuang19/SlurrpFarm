@@ -39,7 +39,6 @@ public class DuckGameController : MonoBehaviour
     {
         //Start createObjects(), which loops, and runs for x amount of times (based on difficulty later)
         Debug.Log("CreateObjects called");
-        CreateObjects();
 
         winMessage = GameObject.Find("Win");
         lossMessage = GameObject.Find("Loss");
@@ -56,7 +55,7 @@ public class DuckGameController : MonoBehaviour
     }
 
 
-    private void CreateObjects() {
+    public void CreateObjects() {
         if (itemsLeft == 0) {
             gameOver = true;
             endGame();
