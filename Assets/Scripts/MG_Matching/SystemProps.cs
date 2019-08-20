@@ -14,7 +14,7 @@ public class SystemProps : MonoBehaviour {
     private bool gameWon = false;
     private bool timeOn = false;
     // adjustable time
-    private float time = 46;
+    public float time = 46;
     private int GameID = 1;
     private bool haveSetExp = false;
 
@@ -24,6 +24,9 @@ public class SystemProps : MonoBehaviour {
 
     public AudioSource cheer;
     public AudioSource bg;
+
+    public Text timeText;
+    public Text shapesLeftText;
 
     void Start () {
         shapes = Resources.LoadAll<GameObject> ("Sprites/MinigameElements/Shapes");
@@ -53,6 +56,11 @@ public class SystemProps : MonoBehaviour {
 
     void Update () {
         //MusicSource.Play();
+        int timeinseconds = (int) time;
+        
+        timeText.text = "Time Left : " + timeinseconds.ToString ();
+        shapesLeftText.text = "Foods Left: " + shapesLeft.ToString ();
+
         if (time <= 0 || shapesLeft == 0) {
             timeOn = false;
         }
@@ -100,16 +108,16 @@ public class SystemProps : MonoBehaviour {
         int width = Screen.width;
         int height = Screen.height;
 
-        GUIStyle style = new GUIStyle ();
-        style.normal.textColor = Color.white;
-        style.fontSize = 100;
-        style.font = (Font) Resources.Load ("Thaleah_PixelFont/Materials/ThaleahFat_TTF", typeof (Font));
+        // GUIStyle style = new GUIStyle ();
+        // style.normal.textColor = Color.white;
+        // style.fontSize = 100;
+        // style.font = (Font) Resources.Load ("Thaleah_PixelFont/Materials/ThaleahFat_TTF", typeof (Font));
 
-        if (timeOn) {
-            int timeinseconds = (int) time;
-            GUI.Box (new Rect (10, 10, width / 3, 100), "Time Left : " + timeinseconds.ToString (), style);
-            GUI.Box (new Rect (width / 3, 10, width / 3, 100), "Ingredients Left: " + shapesLeft.ToString (), style);
-        }
+        // if (timeOn) {
+        //     int timeinseconds = (int) time;
+        //     GUI.Box (new Rect (10, 10, width / 3, 100), "Time Left : " + timeinseconds.ToString (), style);
+        //     GUI.Box (new Rect (width / 3, 10, width / 3, 100), "Ingredients Left: " + shapesLeft.ToString (), style);
+        // }
         
         if (gameover) {
 
