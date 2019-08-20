@@ -48,4 +48,5 @@ public class OpenToScenes : MonoBehaviour
     {
         SceneManager.LoadScene(7);
     }
+    
 }
