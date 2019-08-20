@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigame_Maze.unity
     guid: 991aaa92c1757834ab6acd8dfd84cc9f
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 97a6f0cfeb5cfce4a8b1a0d1b62684df
   m_configObjects: {}

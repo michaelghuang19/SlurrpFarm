@@ -44,4 +44,8 @@ public class OpenToScenes : MonoBehaviour
     {
         instructionCanvas.gameObject.SetActive(false);
     }
+    public void OpenCredits()
+    {
+        SceneManager.LoadScene(7);
+    }
 }
