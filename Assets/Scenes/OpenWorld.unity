@@ -435,7 +435,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 692244205}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6067,8 +6067,8 @@ RectTransform:
   - {fileID: 1056000564}
   - {fileID: 506330812}
   - {fileID: 1684070716}
-  - {fileID: 314799870}
   - {fileID: 308385907}
+  - {fileID: 314799870}
   - {fileID: 783464028}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -6492,6 +6492,7 @@ GameObject:
   - component: {fileID: 783464031}
   - component: {fileID: 783464030}
   - component: {fileID: 783464029}
+  - component: {fileID: 783464032}
   m_Layer: 5
   m_Name: MazeButton
   m_TagString: Untagged
@@ -6612,6 +6613,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783464027}
   m_CullTransparentMesh: 0
+--- !u!70 &783464032
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783464027}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.0595624, y: -5.29845}
+  m_Size: {x: 94.81204, y: 73.62976}
+  m_Direction: 1
 --- !u!223 &885192564 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 2698672449072273037, guid: 1e85beaea28764e6895ba00b85e3e400,
@@ -8125,6 +8142,7 @@ GameObject:
   - component: {fileID: 1684070720}
   - component: {fileID: 1684070719}
   - component: {fileID: 1684070717}
+  - component: {fileID: 1684070718}
   m_Layer: 5
   m_Name: DuckButton
   m_TagString: Untagged
@@ -8207,6 +8225,22 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!70 &1684070718
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684070715}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.7621138, y: 0.58924764}
+  m_Size: {x: 120.08185, y: 52.324047}
+  m_Direction: 1
 --- !u!114 &1684070719
 MonoBehaviour:
   m_ObjectHideFlags: 0
