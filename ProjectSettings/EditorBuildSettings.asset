@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CharSelection.unity
     guid: 278747d3065f5d947bae5e9057727eb3
+  - enabled: 1
+    path: Assets/Scenes/Minigame_Maze.unity
+    guid: 991aaa92c1757834ab6acd8dfd84cc9f
   m_configObjects: {}
