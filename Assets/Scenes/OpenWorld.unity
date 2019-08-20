@@ -567,7 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec7984f3d2917b468eea44b23b5eaf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bearDialogue: {fileID: 0}
+  bearDialogue: {fileID: 1750402953}
   rhinoDialogue: {fileID: 685525889}
   joystick: {fileID: 1063035549}
   bearText: {fileID: 1447441286}
@@ -632,7 +632,6 @@ MonoBehaviour:
   settingsCanvas: {fileID: 1031165660}
   cameraCanvas: {fileID: 2111075169}
   instructionCanvas: {fileID: 0}
-  joystick: {fileID: 0}
 --- !u!114 &377845176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1071,7 +1070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec7984f3d2917b468eea44b23b5eaf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bearDialogue: {fileID: 0}
+  bearDialogue: {fileID: 1750402953}
   rhinoDialogue: {fileID: 685525889}
   joystick: {fileID: 1063035549}
   bearText: {fileID: 1447441286}
@@ -7922,7 +7921,6 @@ MonoBehaviour:
   settingsCanvas: {fileID: 1031165660}
   cameraCanvas: {fileID: 2111075169}
   instructionCanvas: {fileID: 0}
-  joystick: {fileID: 0}
 --- !u!114 &1416841008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8677,7 +8675,6 @@ MonoBehaviour:
   settingsCanvas: {fileID: 1031165660}
   cameraCanvas: {fileID: 2111075169}
   instructionCanvas: {fileID: 0}
-  joystick: {fileID: 0}
 --- !u!1 &1670231109
 GameObject:
   m_ObjectHideFlags: 0
@@ -9630,11 +9627,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 692244205}
     m_Modifications:
-    - target: {fileID: 8971031641300856653, guid: 980288f78d48d4674abd03df8f3874fc,
-        type: 3}
-      propertyPath: m_Name
-      value: Trees
-      objectReference: {fileID: 0}
     - target: {fileID: 2931213081748863465, guid: 980288f78d48d4674abd03df8f3874fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9740,6 +9732,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8971031641300856653, guid: 980288f78d48d4674abd03df8f3874fc,
+        type: 3}
+      propertyPath: m_Name
+      value: Trees
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980288f78d48d4674abd03df8f3874fc, type: 3}
 --- !u!1001 &2698672449286103545
@@ -9749,11 +9746,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2698672449072273032, guid: 1e85beaea28764e6895ba00b85e3e400,
-        type: 3}
-      propertyPath: m_Name
-      value: PopupCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 2698672449072273037, guid: 1e85beaea28764e6895ba00b85e3e400,
         type: 3}
       propertyPath: m_Camera
@@ -9768,6 +9760,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2698672449072273032, guid: 1e85beaea28764e6895ba00b85e3e400,
+        type: 3}
+      propertyPath: m_Name
+      value: PopupCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 2698672449072273036, guid: 1e85beaea28764e6895ba00b85e3e400,
         type: 3}

@@ -14,10 +14,10 @@ public class Dialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bearDialogue = GameObject.Find("BearUI");
+        // bearDialogue = GameObject.Find("BearUI");
         bearDialogue.SetActive(false);
 
-        rhinoDialogue = GameObject.Find("RhinoUI");
+        // rhinoDialogue = GameObject.Find("RhinoUI");
         rhinoDialogue.SetActive(false);
 
     }
