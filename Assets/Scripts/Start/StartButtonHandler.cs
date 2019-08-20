@@ -15,7 +15,7 @@ public class StartButtonHandler : MonoBehaviour {
         // PlayerPrefs.SetInt ("Age", 10);
 
         // Reset PlayerPrefs
-        PlayerPrefs.DeleteAll();
+        // PlayerPrefs.DeleteAll();
 
         Debug.Log (PlayerPrefs.GetString ("Name"));
         Debug.Log (PlayerPrefs.GetInt ("Age"));
