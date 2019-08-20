@@ -6,6 +6,7 @@ public class PlayerMovement2 : MonoBehaviour
 {
     public Joystick joystick;
     Animator animator;
+    
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -25,6 +26,7 @@ public class PlayerMovement2 : MonoBehaviour
             transform.position = newPosition;
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, lockPos, lockPos);
     }
+
 
 
 }

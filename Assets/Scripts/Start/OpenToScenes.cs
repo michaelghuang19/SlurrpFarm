@@ -8,11 +8,10 @@ public class OpenToScenes : MonoBehaviour
     public Canvas settingsCanvas;
     public Canvas cameraCanvas;
     public Canvas instructionCanvas;
-    public GameObject joystick;
     // Start is called before the first frame update
     void Start()
     {
-        joystick.gameObject.SetActive(false);
+        
     }
     public void SettingsEnable()
     {
@@ -45,11 +44,7 @@ public class OpenToScenes : MonoBehaviour
     {
         instructionCanvas.gameObject.SetActive(false);
     }
-    public void DisableInstructionMaze()
-    {
-        instructionCanvas.gameObject.SetActive(false);
-        joystick.gameObject.SetActive(true);
-    }
+
     public void OpenCredits()
     {
         SceneManager.LoadScene(7);

@@ -3,23 +3,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class FinishLine : MonoBehaviour
 {
     private bool gameWon = false;
     private int GameID = 4;
+    private bool timeOn = false;
+    private float totalTime = 45;
+    private float time = 45;
+    
+    public Text timeText;
+    public GameObject timeMessage;
     public GameObject winMessage;
+    public GameObject loseMessage;
+    public GameObject joystick;
+    public GameObject instructionCanvas;
     // Start is called before the first frame update
     void Start()
     {
         winMessage.SetActive(false);
+        loseMessage.SetActive(false);
+        timeText.gameObject.SetActive(false);
+        timeMessage.SetActive(false);
+        joystick.gameObject.SetActive(false);
+    }
+
+    public void StartTime() {
+        timeOn = true;
+        timeText.gameObject.SetActive(true);
+        timeMessage.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (time <= 0 || gameWon == true) {
+            timeOn = false;
+        } 
+        if (timeOn) {
+            time -= Time.deltaTime;
+            //Debug.Log(time);
+            timeText.text = "" + time;
+        } else {
+            if (time < totalTime) {
+                gameWon = false;
+                loseMessage.SetActive(true);
+                Invoke("endGame", 1);
+            }
+        }
     }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log("Collision Detected");
@@ -27,9 +61,14 @@ public class FinishLine : MonoBehaviour
         {
             Debug.Log("Collision detected");
             winMessage.SetActive(true);
-            
+            gameWon = true;
             Invoke("endGame", 1);
         }
+    }
+    public void DisableInstructionMaze()
+    {
+        instructionCanvas.gameObject.SetActive(false);
+        joystick.gameObject.SetActive(true);
     }
 
     void endGame() {
@@ -117,4 +156,5 @@ public class FinishLine : MonoBehaviour
             PlayerPrefs.SetInt("PrevGame", GameID);
         }
     }
+  
 }
