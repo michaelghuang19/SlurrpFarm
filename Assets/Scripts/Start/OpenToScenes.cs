@@ -36,6 +36,10 @@ public class OpenToScenes : MonoBehaviour
         //Debug.Log("Firebase eventLevelStart called");
         SceneManager.LoadScene(2);
     }
+
+    public void OpenMaze() {
+        SceneManager.LoadScene(6);
+    }
     public void DisableInstruction()
     {
         instructionCanvas.gameObject.SetActive(false);
