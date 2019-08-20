@@ -17,8 +17,8 @@ public class PlayerMovement2 : MonoBehaviour
         float horizontalMove = joystick.Horizontal;
         float verticalMove = joystick.Vertical;
         Vector2 newPosition = transform.position;
-        newPosition.x = newPosition.x + 50f * horizontalMove * Time.deltaTime;
-        newPosition.y = newPosition.y + 50f * verticalMove * Time.deltaTime;
+        newPosition.x = newPosition.x + 100f * horizontalMove * Time.deltaTime;
+        newPosition.y = newPosition.y + 100f * verticalMove * Time.deltaTime;
 
             animator.SetFloat("MoveX", horizontalMove);
             animator.SetFloat("MoveY", verticalMove);

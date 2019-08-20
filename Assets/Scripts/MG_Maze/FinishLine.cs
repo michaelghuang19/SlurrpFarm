@@ -27,9 +27,14 @@ public class FinishLine : MonoBehaviour
         {
             Debug.Log("Collision detected");
             winMessage.SetActive(true);
-            SetExp();
-            SceneManager.LoadScene(1);
+            
+            Invoke("endGame", 1);
         }
+    }
+
+    void endGame() {
+        SetExp();
+        SceneManager.LoadScene(1);
     }
     void SetExp()
     {
