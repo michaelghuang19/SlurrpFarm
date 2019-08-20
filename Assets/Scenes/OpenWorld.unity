@@ -417,6 +417,8 @@ GameObject:
   - component: {fileID: 308385909}
   - component: {fileID: 308385908}
   - component: {fileID: 308385910}
+  - component: {fileID: 308385912}
+  - component: {fileID: 308385911}
   m_Layer: 5
   m_Name: SuperRhinoImage
   m_TagString: Untagged
@@ -436,7 +438,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 692244205}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -524,7 +526,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 506330813}
+      - m_Target: {fileID: 308385912}
         m_MethodName: PlayRhinoDialogue
         m_Mode: 1
         m_Arguments:
@@ -537,6 +539,49 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!61 &308385911
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308385906}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.8867416, y: 0.0002632141}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 76.05661, y: 81.792625}
+  m_EdgeRadius: 0
+--- !u!114 &308385912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308385906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec7984f3d2917b468eea44b23b5eaf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bearDialogue: {fileID: 0}
+  rhinoDialogue: {fileID: 685525889}
+  joystick: {fileID: 1063035549}
+  bearText: {fileID: 1447441286}
+  rhinoText: {fileID: 1722237734}
 --- !u!224 &314799870 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2931213081748863465, guid: 980288f78d48d4674abd03df8f3874fc,
@@ -1036,7 +1081,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bearDialogue: {fileID: 0}
-  rhinoDialogue: {fileID: 0}
+  rhinoDialogue: {fileID: 685525889}
+  joystick: {fileID: 1063035549}
+  bearText: {fileID: 1447441286}
+  rhinoText: {fileID: 1722237734}
 --- !u!114 &506330814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1080,7 +1128,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 506330813}
+      - m_Target: {fileID: 308385912}
         m_MethodName: PlayBearDialogue
         m_Mode: 1
         m_Arguments:
@@ -6146,7 +6194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 479.0002, y: -279.1499}
+  m_AnchoredPosition: {x: 0.00011826, y: -231.63}
   m_SizeDelta: {x: 2381.4, y: 558.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &685525891
@@ -6320,7 +6368,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!224 &692244205
 RectTransform:
@@ -6336,8 +6384,8 @@ RectTransform:
   - {fileID: 1424112406}
   - {fileID: 1056000564}
   - {fileID: 506330812}
-  - {fileID: 1684070716}
   - {fileID: 308385907}
+  - {fileID: 1684070716}
   - {fileID: 314799870}
   - {fileID: 783464028}
   m_Father: {fileID: 0}
@@ -6983,7 +7031,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &1031165661
 RectTransform:
@@ -7167,6 +7215,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0001, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1063035549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
+  m_PrefabInstance: {fileID: 465711860}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1070921780
 GameObject:
   m_ObjectHideFlags: 0
@@ -8148,8 +8202,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0099487, y: 0}
-  m_SizeDelta: {x: 2381.4, y: 563}
+  m_AnchoredPosition: {x: 12.2, y: 14.6}
+  m_SizeDelta: {x: 2105, y: 441}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1447441286
 MonoBehaviour:
@@ -8205,7 +8259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25b5810f1cc61f4c9e8da7ea6cf068a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.1
+  delay: 0.075
   fullText: 'Visit slurrpfarm.com for more cool products! '
 --- !u!1 &1538884622
 GameObject:
@@ -8582,7 +8636,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 692244205}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8813,8 +8867,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0099487, y: 0}
-  m_SizeDelta: {x: 2381.4, y: 563}
+  m_AnchoredPosition: {x: 5.9, y: 8.3}
+  m_SizeDelta: {x: 2092.4, y: 466.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1722237733
 MonoBehaviour:
@@ -8828,7 +8882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25b5810f1cc61f4c9e8da7ea6cf068a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.1
+  delay: 0.075
   fullText: 'Eat healthy and you can be a superhero like me! '
 --- !u!114 &1722237734
 MonoBehaviour:
@@ -9006,7 +9060,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 479, y: -279.15}
+  m_AnchoredPosition: {x: -50.834, y: -231.81}
   m_SizeDelta: {x: 2381.4, y: 558.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1750402955
@@ -9090,7 +9144,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 506330813}
+      - m_Target: {fileID: 308385912}
         m_MethodName: StopBearDialogue
         m_Mode: 1
         m_Arguments:
@@ -9115,7 +9169,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 465711860}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1063035549}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
