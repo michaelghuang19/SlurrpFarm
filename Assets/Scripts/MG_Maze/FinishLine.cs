@@ -38,17 +38,20 @@ public class FinishLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (time <= 0 || gameWon == true) {
+        if (time <= 0) {
             timeOn = false;
         } 
-        if (timeOn) {
+        if (timeOn && !gameWon) {
             time -= Time.deltaTime;
             //Debug.Log(time);
             timeText.text = "" + time;
         } else {
             if (time < totalTime) {
+                if (!gameWon) {
+                    loseMessage.SetActive(true);
+                    Debug.Log("Lose Message Active");
+                } 
                 gameWon = false;
-                loseMessage.SetActive(true);
                 Invoke("endGame", 1);
             }
         }

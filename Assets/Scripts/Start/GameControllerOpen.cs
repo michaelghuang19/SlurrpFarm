@@ -37,7 +37,7 @@ public class GameControllerOpen : MonoBehaviour {
         Context = new DynamoDBContext (client);
 
         discCode = "No Codes Available";
-        settingsCanvas.gameObject.SetActive (false);
+        settingsCanvas.gameObject.SetActive(false);
         bool levelledUp = Convert.ToBoolean (PlayerPrefs.GetInt ("LevelChanged"));
         if (levelledUp) {
             Text codeText = GameObject.Find ("/PopupCanvas/PopupBackground/Code").GetComponent<Text> ();
