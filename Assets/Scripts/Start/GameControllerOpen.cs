@@ -72,12 +72,12 @@ public class GameControllerOpen : MonoBehaviour {
         Context.SaveAsync (code, (result) => {
             if (result.Exception == null) {
                 codeAvail = true;
-                Debug.Log ("Save worked: aval " + codeAvail);
+                //Debug.Log ("Save worked: aval " + codeAvail);
             } else {
-                Debug.Log ("AWS Error: " + result.Exception);
+                //Debug.Log ("AWS Error: " + result.Exception);
             }
         });
-        Debug.Log("Avail: " + codeAvail);
+        //Debug.Log("Avail: " + codeAvail);
         if (codeAvail) { return finalString; } else { return "No Codes Available"; }
     }
 

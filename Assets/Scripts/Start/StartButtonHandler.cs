@@ -17,10 +17,10 @@ public class StartButtonHandler : MonoBehaviour {
         // Reset PlayerPrefs
         // PlayerPrefs.DeleteAll();
 
-        Debug.Log (PlayerPrefs.GetString ("Name"));
-        Debug.Log (PlayerPrefs.GetInt ("Age"));
+        //Debug.Log (PlayerPrefs.GetString ("Name"));
+        //Debug.Log (PlayerPrefs.GetInt ("Age"));
 
-        Debug.Log ("Start Button Clicked");
+        //Debug.Log ("Start Button Clicked");
 
         if (PlayerPrefs.HasKey ("Name") && PlayerPrefs.HasKey ("Age")) {
             SceneManager.LoadScene (1);

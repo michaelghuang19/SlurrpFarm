@@ -176,7 +176,7 @@ public class GameController : MonoBehaviour {
         if (isOver) {
             gameOverMessage ();
             SetExp ();
-            Debug.Log ("You have finished the game!");
+            //Debug.Log ("You have finished the game!");
             Invoke ("LoadOpenWorld", 5);
         } else {
             int turnsLeft = allowedGuesses - countGuesses;
@@ -209,8 +209,8 @@ public class GameController : MonoBehaviour {
         int CurExp = PlayerPrefs.GetInt ("CurEXP");
         int PrevGameCount = PlayerPrefs.GetInt ("PrevGameCount");
         int PrevGame = PlayerPrefs.GetInt ("PrevGame");
-        Debug.Log ("Level: " + PlayerLevel);
-        Debug.Log ("CurExp: " + CurExp);
+        //Debug.Log ("Level: " + PlayerLevel);
+        //Debug.Log ("CurExp: " + CurExp);
 
         bool levelChanged = false;
         bool gameChanged = false;
@@ -230,7 +230,7 @@ public class GameController : MonoBehaviour {
             PrevGameCount += 1;
         }
         exp = (int) (exp * (Math.Pow (0.8, PrevGameCount - 1)));
-        Debug.Log ("Exp: " + exp);
+        //Debug.Log ("Exp: " + exp);
         CurExp += exp;
         if (PlayerLevel == 1) {
             if (CurExp >= 100) {
@@ -252,7 +252,7 @@ public class GameController : MonoBehaviour {
             }
         }
 
-        Debug.Log ("CurExp: " + CurExp);
+        //Debug.Log ("CurExp: " + CurExp);
         PlayerPrefs.SetInt ("CurEXP", CurExp);
         PlayerPrefs.SetInt ("PrevGameCount", PrevGameCount);
         if (levelChanged) {

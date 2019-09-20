@@ -20,7 +20,7 @@ public class CatchCollision : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision) {
         //Debug.Log("Collision Detected");
         if (collision.gameObject.name == "Player") {
-            Debug.Log("Play hit");
+            //Debug.Log("Play hit");
             hitSound.Play();
             Destroy(gameObject); 
             GameObject go = GameObject.Find ("GameControllerDuck");

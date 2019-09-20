@@ -15,7 +15,7 @@ public class CatcherMovement : MonoBehaviour
 
     void Update() {
         if (Input.touchCount > 0) {
-            Debug.Log("Registered Touch");
+            //Debug.Log("Registered Touch");
             Touch touch = Input.GetTouch(0);
             touchPos = Camera.main.ScreenToWorldPoint(touch.position);
             touchPos.z = 0;

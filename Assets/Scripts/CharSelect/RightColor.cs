@@ -9,7 +9,7 @@ public class RightColor : MonoBehaviour {
     }
 
     public void ChangeItemRight () {
-        Debug.Log ("Right works");
+        //Debug.Log ("Right works");
         GameObject.Find ("SpriteController").GetComponent<SpriteController> ().MoveRight ();
     }
 

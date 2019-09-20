@@ -9,7 +9,7 @@ public class LeftColor : MonoBehaviour {
     }
 
     public void ChangeItemLeft () {
-        Debug.Log ("Left works");
+        //Debug.Log ("Left works");
         GameObject.Find ("SpriteController").GetComponent<SpriteController> ().MoveLeft ();
     }
 

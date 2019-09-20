@@ -49,8 +49,8 @@ public class Experience : MonoBehaviour
         originalSize = expBar.rectTransform.rect.width;
         curLevel = PlayerPrefs.GetInt("PlayerLevel");
         curExp = PlayerPrefs.GetInt("CurEXP");
-        Debug.Log(curLevel);
-        Debug.Log(curExp);
+        //Debug.Log(curLevel);
+        //Debug.Log(curExp);
         if(curLevel == 1)
         {
             

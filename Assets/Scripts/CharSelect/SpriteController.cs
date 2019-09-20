@@ -29,11 +29,11 @@ public class SpriteController : MonoBehaviour {
         bool savedName = SaveName ();
         bool savedAge = SaveAge ();
 
-        Debug.Log ("savedName is " + savedName.ToString ());
-        Debug.Log ("savedAge is " + savedAge.ToString ());
+        //Debug.Log ("savedName is " + savedName.ToString ());
+        //Debug.Log ("savedAge is " + savedAge.ToString ());
 
         if (savedName && savedAge) {
-            Debug.Log ("Loading open world");
+            //Debug.Log ("Loading open world");
             SceneManager.LoadScene (1);
         }
     }
@@ -46,10 +46,10 @@ public class SpriteController : MonoBehaviour {
             name.text = "Please enter your name!";
             return false;
         } else {
-            Debug.Log (name.text);
+            //Debug.Log (name.text);
             string nameString = name.text;
             PlayerPrefs.SetString ("Name", nameString);
-            Debug.Log ("Saved name is " + PlayerPrefs.GetString ("Name"));
+            //Debug.Log ("Saved name is " + PlayerPrefs.GetString ("Name"));
             return true;
         }
     }
@@ -61,10 +61,10 @@ public class SpriteController : MonoBehaviour {
             age.text = "Please enter your age!";
             return false;
         } else {
-            Debug.Log (age.text);
+            //Debug.Log (age.text);
             int ageInteger = int.Parse (age.text);
             PlayerPrefs.SetInt ("Age", ageInteger);
-            Debug.Log ("Saved age is " + PlayerPrefs.GetInt ("Age"));
+            //Debug.Log ("Saved age is " + PlayerPrefs.GetInt ("Age"));
             return true;
         }
     }

@@ -27,7 +27,7 @@ public class DodgeCollision : MonoBehaviour
             score --;
             go.GetComponent<DuckGameController>().score = score;
             Destroy(gameObject); */
-            Debug.Log("Play dodge");
+            //Debug.Log("Play dodge");
             dodgeSound.Play();
             Destroy(gameObject); 
             GameObject go = GameObject.Find ("GameControllerDuck");

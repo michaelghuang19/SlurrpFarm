@@ -41,10 +41,10 @@ public class SystemProps : MonoBehaviour {
         lossMessage.SetActive (false);
 
         if (winMessage) {
-            Debug.Log ("winMessage exists!");
+            //Debug.Log ("winMessage exists!");
         }
         if (lossMessage) {
-            Debug.Log ("lossMessage exists!");
+            //Debug.Log ("lossMessage exists!");
         }
 
         cheer.Stop ();
@@ -125,7 +125,7 @@ public class SystemProps : MonoBehaviour {
 
             // fix this, return to screen
             if (gameWon) {
-                Debug.Log ("Playing cheer!");
+                //Debug.Log ("Playing cheer!");
                 // bg.Stop();
                 // cheer.Play ();
                 winMessage.SetActive (true);
@@ -155,8 +155,8 @@ public class SystemProps : MonoBehaviour {
         int CurExp = PlayerPrefs.GetInt ("CurEXP");
         int PrevGameCount = PlayerPrefs.GetInt ("PrevGameCount");
         int PrevGame = PlayerPrefs.GetInt ("PrevGame");
-        Debug.Log ("Level: " + PlayerLevel);
-        Debug.Log ("CurExp: " + CurExp);
+        //Debug.Log ("Level: " + PlayerLevel);
+        //Debug.Log ("CurExp: " + CurExp);
 
         bool levelChanged = false;
         bool gameChanged = false;

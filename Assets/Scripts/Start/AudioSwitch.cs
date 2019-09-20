@@ -35,7 +35,7 @@ public class AudioSwitch : MonoBehaviour
     }
     public void OnChangeValue()
     {
-        Debug.Log("Clicked toggle");
+        //Debug.Log("Clicked toggle");
         bool onoffSwitch = gameObject.GetComponent<Toggle>().isOn;
      
         if(onoffSwitch)
@@ -60,7 +60,7 @@ public class AudioSwitch : MonoBehaviour
     {
         
         bool playMusic = Convert.ToBoolean(PlayerPrefs.GetInt("PlayMusic"));
-        Debug.Log("1." + playMusic);
+        //Debug.Log("1." + playMusic);
         if (playMusic)
         {
             switchOff.SetActive(false);

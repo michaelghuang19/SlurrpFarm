@@ -49,7 +49,7 @@ public class FinishLine : MonoBehaviour
             if (time < totalTime) {
                 if (!gameWon) {
                     loseMessage.SetActive(true);
-                    Debug.Log("Lose Message Active");
+                    //Debug.Log("Lose Message Active");
                 } 
                 gameWon = false;
                 Invoke("endGame", 1);
@@ -62,7 +62,7 @@ public class FinishLine : MonoBehaviour
         //Debug.Log("Collision Detected");
         if (collision.gameObject.name == "Monkey")
         {
-            Debug.Log("Collision detected");
+            //Debug.Log("Collision detected");
             winMessage.SetActive(true);
             gameWon = true;
             Invoke("endGame", 1);
@@ -84,8 +84,8 @@ public class FinishLine : MonoBehaviour
         int CurExp = PlayerPrefs.GetInt("CurEXP");
         int PrevGameCount = PlayerPrefs.GetInt("PrevGameCount");
         int PrevGame = PlayerPrefs.GetInt("PrevGame");
-        Debug.Log("Level: " + PlayerLevel);
-        Debug.Log("CurExp: " + CurExp);
+        //Debug.Log("Level: " + PlayerLevel);
+        //Debug.Log("CurExp: " + CurExp);
 
         bool levelChanged = false;
         bool gameChanged = false;

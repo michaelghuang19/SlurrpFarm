@@ -38,7 +38,7 @@ public class DuckGameController : MonoBehaviour
     void Start() 
     {
         //Start createObjects(), which loops, and runs for x amount of times (based on difficulty later)
-        Debug.Log("CreateObjects called");
+        //Debug.Log("CreateObjects called");
 
         winMessage = GameObject.Find("Win");
         lossMessage = GameObject.Find("Loss");
@@ -64,7 +64,7 @@ public class DuckGameController : MonoBehaviour
                 GameObject item = curObjs.Dequeue() as GameObject;
                 Destroy(item);
             } */
-            Debug.Log("Creating object: " + itemsLeft);
+            //Debug.Log("Creating object: " + itemsLeft);
             Invoke("CreateObjects", 3);
             int index = UnityEngine.Random.Range(0, items.Length);
             GameObject randomShape = Instantiate(items[index]) as GameObject;

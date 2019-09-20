@@ -24,14 +24,14 @@ public class Dialogue : MonoBehaviour
 
     public void PlayBearDialogue()
     {
-        Debug.Log("Bear Clicked");
+        //Debug.Log("Bear Clicked");
         bearDialogue.SetActive(true);
         joystick.SetActive(false);
     }
 
     public void StopBearDialogue()
     {
-        Debug.Log("Bear Dialogue Clicked");
+        //Debug.Log("Bear Dialogue Clicked");
         bearDialogue.SetActive(false);
         joystick.SetActive(true);
 
@@ -40,14 +40,14 @@ public class Dialogue : MonoBehaviour
 
     public void PlayRhinoDialogue()
     {
-        Debug.Log("Rhino Clicked");
+        //Debug.Log("Rhino Clicked");
         rhinoDialogue.SetActive(true);
         joystick.SetActive(false);
     }
 
     public void StopRhinoDialogue()
     {
-        Debug.Log("Rhino Dialogue Clicked");
+        //Debug.Log("Rhino Dialogue Clicked");
         rhinoDialogue.SetActive(false);
         joystick.SetActive(true);
 
