@@ -35,7 +35,7 @@ public class Dialogue : MonoBehaviour
         bearDialogue.SetActive(false);
         joystick.SetActive(true);
 
-        bearText.text = "Visit slurrpfarm.com for more cool products! ";
+        bearText.text = "Did you know that millet is one of the healthiest grains? ";
     }
 
     public void PlayRhinoDialogue()
